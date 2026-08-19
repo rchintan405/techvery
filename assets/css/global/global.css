@@ -357,8 +357,8 @@
 .footer-custom-video-mask {
     width: 180px;
     height: 180px;
-    mask-image: url("/assets/images/Union (1).png");
-    -webkit-mask-image: url("/assets/images/Union (1).png");
+    mask-image: url("../../assets/images/Union (1).png");
+    -webkit-mask-image: url("../../assets/images/Union (1).png");
     mask-size: contain;
     -webkit-mask-size: contain;
     mask-repeat: no-repeat;
