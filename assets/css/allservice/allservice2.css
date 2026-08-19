@@ -1158,7 +1158,7 @@ figure {
     grid-row-gap: var(--_spacing-responsiveness---section--spacing-xlarge);
     flex-flow: column;
     align-items: flex-start;
-    max-width: 450px;
+    /* max-width: 450px; */
     display: flex
 }
 
