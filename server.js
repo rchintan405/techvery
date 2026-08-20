@@ -26,7 +26,7 @@ app.post("/api/send-email", async (req, res) => {
       }
     }
 
-    const recipient = data.email_to || "utsav8746@gmail.com";
+    const recipient = data.email_to || "utsav8746@gmail.com, aliah@techvery.com";
 
     const mailOptions = {
       from: `"TECHVERY Website" <princeshiloja3s@gmail.com>`,
