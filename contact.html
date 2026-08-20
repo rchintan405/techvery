@@ -311,22 +311,24 @@
                 <div data-w-id="dfbe27c0-5379-86ea-4042-0b118a6d010d" class="contact-form-wrapper">
                   <div class="contact-form-holder">
                     <div class="w-form">
-                      <form id="email-form" name="email-form" data-name="Email Form" method="get" class="form"
+                      <form id="email-form" name="email-form" data-name="Email Form" action="https://api.web3forms.com/submit" method="POST" class="form"
                         data-wf-page-id="69a178e737042e4378fd286b"
-                        data-wf-element-id="4926d991-9886-6651-f566-d1c8eee24875"
-                        data-turnstile-sitekey="0x4AAAAAAAQTptj2So4dx43e">
+                        data-wf-element-id="4926d991-9886-6651-f566-d1c8eee24875">
+                        <input type="hidden" name="access_key" value="9c563bbe-600e-499e-9b34-d280afa32fd2">
+                        <input type="hidden" name="subject" value="New Contact Form Submission - Techvery">
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                         <div class="contact-card-wrapper"><label for="name" class="contact-form-labe">Name</label><input
-                            class="contact-field w-input" maxlength="256" name="name" data-name="Name"
+                            class="contact-field w-input" maxlength="256" name="Full Name" data-name="Name"
                             placeholder="Your Name" type="text" id="name" /></div>
                         <div class="contact-card-wrapper"><label for="email" class="contact-form-labe">Email
-                            Address</label><input class="contact-field w-input" maxlength="256" name="email"
+                            Address</label><input class="contact-field w-input" maxlength="256" name="Email"
                             data-name="Email" placeholder="avoora@design.con" type="email" id="email" required="" />
                         </div>
                         <div class="contact-card-wrapper"><label for="Phone" class="contact-form-labe">phone
                             number</label><input class="contact-field w-input" maxlength="256" name="Phone"
                             data-name="Phone" placeholder="+1 (555) 123-4567" type="tel" id="Phone" required="" /></div>
                         <div class="contact-card-wrapper"><label for="field"
-                            class="contact-form-labe">BUDGET</label><select id="field" name="field" data-name="Field"
+                            class="contact-form-labe">BUDGET</label><select id="field" name="Budget" data-name="Field"
                             class="contact-field w-select">
                             <option value="">$1000- $8000</option>
                             <option value="First">$1000-$2500</option>
@@ -335,7 +337,7 @@
                           </select></div>
                         <div class="contact-card-wrapper"><label for="field-2"
                             class="contact-form-labe">MESSAGE</label><textarea placeholder="Example Text"
-                            maxlength="5000" id="field-2" name="field-2" data-name="Field 2"
+                            maxlength="5000" id="field-2" name="Message" data-name="Field 2"
                             class="contact-text-area w-input"></textarea>
                         </div><input type="submit" data-wait="Please wait..." class="contact-button w-button"
                           value="CONTACT" />
@@ -715,15 +717,17 @@
               <div class="cta-content-divider"></div>
               <div class="cta-form-holder">
                 <div class="w-form">
-                  <form id="email-form" name="email-form" data-name="Email Form" method="get"
-                    data-wf-page-id="69a0a45520c8336fe957cd4a" data-wf-element-id="ce0e4fc7-fcf3-98ad-4957-6b7ddf764949"
-                    data-turnstile-sitekey="0x4AAAAAAAQTptj2So4dx43e">
+                  <form id="email-form" name="email-form" data-name="Email Form" action="https://api.web3forms.com/submit" method="POST"
+                    data-wf-page-id="69a0a45520c8336fe957cd4a" data-wf-element-id="ce0e4fc7-fcf3-98ad-4957-6b7ddf764949">
+                    <input type="hidden" name="access_key" value="9c563bbe-600e-499e-9b34-d280afa32fd2">
+                    <input type="hidden" name="subject" value="New Submission from Techvery Website">
+                    <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
                     <div class="cta-form-field-wrapper"><input class="cta-text-area w-input" maxlength="256"
-                        name="CTA-Name" data-name="CTA Name" placeholder="Full Name" type="text" id="CTA-Name" /><input
-                        class="cta-text-area w-input" maxlength="256" name="email" data-name="Email"
+                        name="Full Name" data-name="CTA Name" placeholder="Full Name" type="text" id="CTA-Name" /><input
+                        class="cta-text-area w-input" maxlength="256" name="Email" data-name="Email"
                         placeholder="E-Mail" type="email" id="email" required="" /><input class="cta-text-area w-input"
-                        maxlength="256" name="name" data-name="Name" placeholder="Company name" type="text"
-                        id="name" /><textarea id="field" name="field" maxlength="5000" data-name="Field"
+                        maxlength="256" name="Company Name" data-name="Name" placeholder="Company name" type="text"
+                        id="name" /><textarea id="field" name="Message" maxlength="5000" data-name="Field"
                         placeholder="Test Message" class="cta-text-big-area w-input"></textarea></div><input
                       type="submit" data-wait="Please wait..." class="cta-buuton w-button" value="Submit" />
                   </form>
@@ -952,6 +956,7 @@
   <script src="assets/js/Home/gsap.min.js"></script>
   <script src="assets/js/Home/gsap3.12.5.min.js"></script>
   <script src="assets/js/Home/ScrollTrigger.min.js"></script>
+  <script src="assets/js/form-handler.js"></script>
 </body>
 
 </html>
