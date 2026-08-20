@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html data-wf-domain="techvery.com" data-wf-page="69a177fdca286697656d7051" data-wf-site="69a0a45220c8336fe957ccba"
+<html data-wf-domain="techvery.com" data-wf-page="69a177754c05126b9f4ffc9a" data-wf-site="69a0a45220c8336fe957ccba"
   data-wf-status="1" lang="en">
 
 <head>
@@ -19,14 +19,39 @@
   <!-- Local CSS Stylesheets -->
   <link href="assets/css/home/style.css" rel="stylesheet" type="text/css" />
   <link href="assets/css/home/style2.css" rel="stylesheet" type="text/css" />
+  <link href="assets/css/service/style4.css" rel="stylesheet" type="text/css" />
+  <link href="assets/css/service/style5.css" rel="stylesheet" type="text/css" />
   <link href="assets/css/global/global.css" rel="stylesheet" type="text/css" />
-  <link href="assets/css/home/style5.css" rel="stylesheet" type="text/css" />
 
   <style>
     .w-webflow-badge {
       display: none !important;
     }
+    @keyframes heroHeaderSlideUp {
+      from {
+        opacity: 0;
+        transform: translate3d(0, 20px, 0);
+      }
+      to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+      }
+    }
+    .hero-slide-up-1 {
+      animation: heroHeaderSlideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.1s forwards;
+      opacity: 0;
+    }
+    .hero-slide-up-2 {
+      animation: heroHeaderSlideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.25s forwards;
+      opacity: 0;
+    }
+    .hero-slide-up-3 {
+      animation: heroHeaderSlideUp 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+      opacity: 0;
+    }
   </style>
+  <link href="./assets/images/favicon.png" rel="shortcut icon" type="image/x-icon" />
+  <link href="./assets/images/favicon.png" rel="apple-touch-icon" />
 </head>
 
 <body class="body">
@@ -50,8 +75,6 @@
 
           <!-- Right side: Let's talk & Profile card -->
           <div class="nav-right-container hide-tablet">
-
-
             <div class="hero-1-button-wrapper hide-tablet"><a data-w-id="80fc35ae-cc51-5d45-bf7d-ece4ade78d81"
                 href="contact.html" class="hero-1-primary-button w-inline-block">
                 <div class="primary-button-text-wrapper">
@@ -75,12 +98,11 @@
               </a></div>
             <div class="nav-profile-card">
               <div class="nav-profile-image-wrapper">
-                <img
-                  src="https://cdn.prod.website-files.com/69a0a45220c8336fe957ccba/69c2c8febe5ed42eae483183_Hero%201%20Profile.webp"
-                  loading="lazy" alt="Mitchel Jonson" class="nav-profile-image" />
+                <img src="assets/images/ankursir.png" loading="lazy" alt="Ankur Kavathiya"
+                  class="nav-profile-image" />
               </div>
               <div class="nav-profile-content-wrapper">
-                <div class="nav-profile-name">Mitchel Jonson</div>
+                <div class="nav-profile-name">Ankur Kavathiya</div>
                 <div class="nav-profile-title">Founder &amp; CEO</div>
               </div>
             </div>
@@ -91,17 +113,19 @@
   </div>
   <div class="main-wrapper">
     <!-- Featured Work Hero & Portfolio Section -->
-    <section class="section dark work-1" style="padding-top: 40px;">
+    <section class="section">
       <div class="w-layout-blockcontainer container w-container">
         <div class="section-wrapper">
-          <div class="section-header-wrapper">
-            <h2 class="section-heading">Featured Work</h2>
-            <div class="section-header-divider-wrapper hide-mobile">
-              <div class="section-header-divider"></div>
-            </div>
-            <div class="home-1-work-tag-wrapper">
+          <div class="service-1-hero-header-wrapper">
+            <div class="service-a-hero-tag hero-slide-up-1">
               <div class="brand-circle"></div>
               <div class="section-tag">WORK PORTFOLIO</div>
+            </div>
+            <h1 class="heading-1-inner-page hero-slide-up-2">Featured Work</h1>
+            <div class="service-1-hero-text-wrapper hero-slide-up-3">
+              <div class="inner-page-subtitle">
+                Selected projects showcasing strategy, design, and software engineering expertise in building scalable digital experiences.
+              </div>
             </div>
           </div>
           <div id="portfolio-container" class="portfolio-cards-list">
@@ -194,7 +218,7 @@
                   <div class="portfolio-tech-wrapper">
                     <div class="portfolio-tech-icon-group">
                       <div class="portfolio-tech-icon-circle">
-                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path></svg>
                       </div>
                       <div class="portfolio-tech-icon-circle">
                         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 17 22 12"></polyline></svg>
@@ -246,7 +270,7 @@
                   <div class="portfolio-tech-wrapper">
                     <div class="portfolio-tech-icon-group">
                       <div class="portfolio-tech-icon-circle">
-                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path></svg>
                       </div>
                       <div class="portfolio-tech-icon-circle">
                         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 17 22 12"></polyline></svg>
@@ -281,16 +305,16 @@
                     <img src="./assets/images/portfolio/portfolio_iic_planet_logo.png" alt="IIC Planet logo" class="portfolio-badge-logo-img" />
                   </div>
                 </div>
-                <p class="portfolio-desc">The premier B2B gateway for international infrastructure, energy, and high-impact tech collaboration.</p>
+                <p class="portfolio-desc">IIC Planet is an all-in-one crypto management ecosystem offering staking, tokenomics, launchpad, multi-asset trading, and decentralized finance solutions.</p>
                 <div class="portfolio-info-grid">
                   <div class="portfolio-info-item">
                     <span class="portfolio-info-label">Project timeline</span>
-                    <span class="portfolio-info-val">2-3 Months</span>
+                    <span class="portfolio-info-val">2-4 Months</span>
                   </div>
                   <div class="portfolio-info-item">
                     <span class="portfolio-info-label">Country</span>
                     <span class="portfolio-info-val">
-                      <img src="https://flagcdn.com/w40/ae.png" srcset="https://flagcdn.com/w80/ae.png 2x" width="22" height="15" alt="Dubai flag" class="portfolio-country-flag-img" /> Dubai
+                      <img src="https://flagcdn.com/w40/br.png" srcset="https://flagcdn.com/w80/br.png 2x" width="22" height="15" alt="Brazil flag" class="portfolio-country-flag-img" /> Brazil
                     </span>
                   </div>
                 </div>
@@ -298,7 +322,7 @@
                   <div class="portfolio-tech-wrapper">
                     <div class="portfolio-tech-icon-group">
                       <div class="portfolio-tech-icon-circle">
-                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1 4-10z"></path></svg>
                       </div>
                       <div class="portfolio-tech-icon-circle">
                         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 17 22 12"></polyline></svg>
@@ -307,7 +331,7 @@
                         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
                       </div>
                     </div>
-                    <span class="portfolio-tech-text">ReactJS + Supabase</span>
+                    <span class="portfolio-tech-text">Vue.js + Web3.js</span>
                   </div>
                   <a href="https://iic-planet-dashboard.kretoss.in" target="_blank" rel="noopener noreferrer" aria-label="View IIC Planet" class="portfolio-link-btn">↗</a>
                 </div>
@@ -319,7 +343,7 @@
       </div>
     </section>
 
-    <!-- Let's Talk Section -->
+    <!-- Contact CTA Section -->
     <section class="section">
       <div class="w-layout-blockcontainer container w-container">
         <div class="section-wrapper">
@@ -392,6 +416,10 @@
                 <div class="cta-content-divider"></div>
                 <div class="cta-contact-content-holder">
                   <div class="cta-offer-main-wrapper">
+                    <div class="cta-image-wrapper"><img loading="lazy"
+                        src="https://cdn.prod.website-files.com/69a0a45220c8336fe957ccba/69ce260749d7110937223c7f_CTA%20Picture.webp"
+                        alt="Person wearing a white hooded jacket and virtual reality headset against a shimmering, abstract background."
+                        class="cta-image" /></div>
                     <div class="cta-offer-wrapper">
                       <div class="text-medium">What we offer</div>
                       <div class="cta-video-wrapper">
@@ -430,9 +458,9 @@
                     </div>
                     <div class="cta-address-card">
                       <div class="text-medium">Office</div>
-                      <div class="text-base-small-medium paragraph">Office 1204, Business Bay<br /> Tower Business Bay,
-                        Dubai,<br />
-                        UAE P.O. Box 123456
+                      <div class="text-base-small-medium paragraph">Office 1204, Business Bay <br /> Tower Business
+                        Bay,
+                        Dubai,<br /> UAE P.O. Box 123456
                       </div>
                     </div>
                   </div>
@@ -450,7 +478,7 @@
                 <div class="cta-form-holder">
                   <div class="w-form">
                     <form id="email-form" name="email-form" data-name="Email Form"
-                      action="https://api.web3forms.com/submit" method="POST" data-wf-page-id="69a0a45520c8336fe957cd4a"
+                      action="https://api.web3forms.com/submit" method="POST" data-wf-page-id="69a177754c05126b9f4ffc9a"
                       data-wf-element-id="ce0e4fc7-fcf3-98ad-4957-6b7ddf764949">
                       <input type="hidden" name="access_key" value="9c563bbe-600e-499e-9b34-d280afa32fd2">
                       <input type="hidden" name="subject" value="New Submission from Techvery Website">
@@ -669,9 +697,9 @@
             <div class="footer-custom-banner">
               <div class="footer-custom-logo-wrapper">
                 <div class="footer-custom-video-mask">
-                  <video autoplay loop muted playsinline class="footer-custom-video">
+                  <video src="./assets/videos/footer-video.mp4" autoplay loop muted playsinline class="footer-custom-video">
                     <source
-                      src="https://cdn.prod.website-files.com/69a0a45220c8336fe957ccba%2F69cfa6401bf9cbaeae7efef2_Footer%20Final%20Video_mp4.mp4"
+                      src="./assets/videos/footer-video.mp4"
                       type="video/mp4">
                   </video>
                 </div>

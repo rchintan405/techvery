@@ -60,4 +60,58 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }, true);
   });
+
+  // Service Accordion Interactive Click-Only Handler
+  const serviceCards = document.querySelectorAll(".home-1-service-card");
+  serviceCards.forEach(function (card) {
+    card.addEventListener("click", function () {
+      const parent = card.parentElement;
+      if (parent) {
+        parent.querySelectorAll(".home-1-service-card").forEach(function (c) {
+          c.classList.remove("active");
+        });
+      }
+      card.classList.add("active");
+    });
+  });
+
+  // Guarantee Auto-play for local footer videos across all browsers and file:// protocols
+  function initFooterVideos() {
+    const footerVideos = document.querySelectorAll(".footer-custom-video");
+    footerVideos.forEach(function (video) {
+      video.muted = true;
+      video.defaultMuted = true;
+      video.playsInline = true;
+      video.setAttribute("muted", "");
+      video.setAttribute("playsinline", "");
+      video.setAttribute("autoplay", "");
+      video.setAttribute("loop", "");
+      
+      const tryPlay = function () {
+        const playPromise = video.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(function (err) {
+            console.log("Autoplay retry queued:", err);
+          });
+        }
+      };
+
+      tryPlay();
+      video.addEventListener("loadedmetadata", tryPlay);
+      video.addEventListener("canplay", tryPlay);
+
+      const forcePlay = function () {
+        tryPlay();
+      };
+
+      document.addEventListener("click", forcePlay, { once: true });
+      document.addEventListener("touchstart", forcePlay, { once: true });
+      document.addEventListener("scroll", forcePlay, { once: true });
+      document.addEventListener("mousemove", forcePlay, { once: true });
+    });
+  }
+
+  initFooterVideos();
+  window.addEventListener("load", initFooterVideos);
 });
+
