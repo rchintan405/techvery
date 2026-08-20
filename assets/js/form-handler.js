@@ -51,7 +51,6 @@ document.addEventListener("DOMContentLoaded", function () {
           payload[key] = value;
         }
       });
-      payload.email_to = "utsav8746@gmail.com, aliah@techvery.com";
 
       function handleSuccess() {
         form.style.display = "none";
@@ -59,7 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       function handleFailure(err) {
-        console.error("Gmail SMTP Error:", err);
+        console.error("Email send error:", err);
         if (failMessage) failMessage.style.display = "block";
       }
 
@@ -72,9 +71,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
 
-      // Send form data to send-email endpoint (Local Express server or Netlify function)
-      const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1" || !window.location.hostname || window.location.protocol === "file:";
-      const endpoint = isLocal ? "http://localhost:3000/api/send-email" : "/.netlify/functions/send-email";
+      // Send form data to the Cloudflare Worker, which relays it to Resend's REST API
+      const endpoint = "https://techvery-mail.rchintan405.workers.dev/";
 
       fetch(endpoint, {
         method: "POST",
