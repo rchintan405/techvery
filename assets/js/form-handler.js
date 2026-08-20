@@ -51,7 +51,7 @@ document.addEventListener("DOMContentLoaded", function () {
           payload[key] = value;
         }
       });
-      payload.email_to = "utsav8746@gmail.com";
+      payload.email_to = "utsav8746@gmail.com, aliah@techvery.com";
 
       function handleSuccess() {
         form.style.display = "none";
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
 
-      // Exclusively send via Nodemailer Gmail SMTP (Sender: princeshiloja3s@gmail.com)
+      // Send form data to send-email endpoint (Local Express server or Netlify function)
       const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1" || !window.location.hostname || window.location.protocol === "file:";
       const endpoint = isLocal ? "http://localhost:3000/api/send-email" : "/.netlify/functions/send-email";
 
@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
         body: JSON.stringify(payload)
       })
         .then(async function (res) {
-          const json = await res.json().catch(() => ({}));
+          const json = await res.json().catch(function () { return {}; });
           if (res.ok && json.success) {
             handleSuccess();
           } else {
@@ -149,8 +149,8 @@ document.addEventListener("DOMContentLoaded", function () {
   initFooterVideos();
   window.addEventListener("load", initFooterVideos);
 
-  // Automatic Profile Card Rotation (Ankur Kavathiya <-> Aliah Sayyed every 5 seconds)
-  // Animation: Outgoing profile slides UP & fades out; Incoming profile enters from DOWN & slides up into position.
+  // Automatic Profile Card Rotation (Ankur Kavathiya <-> Aliah Techvery every 5 seconds)
+  // Animation: Outgoing profile slides UP & fades out; Incoming profile enters from DOWN & slides up into position smoothly.
   function initProfileRotator() {
     const navProfileCards = document.querySelectorAll(".nav-profile-card, .hero-1-profile-card-wrapper");
     if (!navProfileCards.length) return;
@@ -158,20 +158,28 @@ document.addEventListener("DOMContentLoaded", function () {
     const profiles = [
       {
         name: "Ankur Kavathiya",
-        title: "Founder & CEO",
+        title: "CEO",
         imageName: "ankursir.png"
       },
       {
         name: "Aliah Techvery",
-        title: "CEO",
+        title: "CTO",
         imageName: "aliha.jpg"
       }
     ];
 
+    // Preload both images immediately to ensure instantaneous swap with zero network delay
+    ["ankursir.png", "aliha.jpg"].forEach(function (imgName) {
+      const img1 = new Image();
+      img1.src = "assets/images/" + imgName;
+      const img2 = new Image();
+      img2.src = "../assets/images/" + imgName;
+    });
+
     let currentIndex = 0;
 
     navProfileCards.forEach(function (card) {
-      card.style.transition = "transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease";
+      card.style.transition = "transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease";
       card.style.willChange = "transform, opacity";
       card.style.minWidth = "175px";
       card.style.boxSizing = "border-box";
@@ -182,41 +190,58 @@ document.addEventListener("DOMContentLoaded", function () {
       const nextProfile = profiles[currentIndex];
 
       navProfileCards.forEach(function (card) {
-        // Step 1: Slide UP & fade OUT
-        card.style.transition = "transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease";
-        card.style.transform = "translateY(-18px)";
+        // Step 1: Slide UP & fade OUT smoothly
+        card.style.transition = "transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease";
+        card.style.transform = "translateY(-14px)";
         card.style.opacity = "0";
 
         setTimeout(function () {
-          // Step 2: Instantly move to bottom (+18px) while hidden
-          card.style.transition = "none";
-          card.style.transform = "translateY(18px)";
-
+          // Step 2: Update image & wait for decode while card is completely invisible (opacity: 0)
           const img = card.querySelector("img");
+
+          const applyUpdatesAndReveal = function () {
+            const nameEl = card.querySelector(".nav-profile-name, .hero-1-profile-text");
+            if (nameEl) {
+              nameEl.textContent = nextProfile.name;
+            }
+
+            const titleEl = card.querySelector(".nav-profile-title, .text-xsmall-medium, .hero-1-profile-subtitle");
+            if (titleEl) {
+              titleEl.textContent = nextProfile.title;
+            }
+
+            // Step 3: Move to bottom start position (+14px) instantly while hidden
+            card.style.transition = "none";
+            card.style.transform = "translateY(14px)";
+
+            // Step 4: Force browser reflow so translateY(14px) takes effect before transition
+            void card.offsetWidth;
+
+            // Step 5: Animate back UP to normal position (0) & fade IN smoothly
+            card.style.transition = "transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.4s ease";
+            card.style.transform = "translateY(0)";
+            card.style.opacity = "1";
+          };
+
           if (img) {
-            img.src = img.src.replace(/ankursir\.png|aliha\.jpg/g, nextProfile.imageName);
+            const rawSrc = img.getAttribute("src") || img.src;
+            if (rawSrc) {
+              const newSrc = rawSrc.replace(/ankursir\.png|aliha\.jpg/g, nextProfile.imageName);
+              img.setAttribute("src", newSrc);
+              img.src = newSrc;
+            }
             img.alt = nextProfile.name;
-          }
 
-          const nameEl = card.querySelector(".nav-profile-name, .hero-1-profile-text");
-          if (nameEl) {
-            nameEl.textContent = nextProfile.name;
+            // Wait for image decode to guarantee the browser NEVER paints the previous image frame during fade-in
+            if (typeof img.decode === "function") {
+              img.decode().then(applyUpdatesAndReveal).catch(applyUpdatesAndReveal);
+            } else {
+              applyUpdatesAndReveal();
+            }
+          } else {
+            applyUpdatesAndReveal();
           }
-
-          const titleEl = card.querySelector(".nav-profile-title, .text-xsmall-medium");
-          if (titleEl) {
-            titleEl.textContent = nextProfile.title;
-          }
-
-          // Step 3: Animate UP from bottom to normal position (0) & fade IN
-          requestAnimationFrame(function () {
-            requestAnimationFrame(function () {
-              card.style.transition = "transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.45s ease";
-              card.style.transform = "translateY(0)";
-              card.style.opacity = "1";
-            });
-          });
-        }, 380);
+        }, 360);
       });
     }, 5000);
   }

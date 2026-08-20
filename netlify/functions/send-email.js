@@ -46,7 +46,7 @@ exports.handler = async function (event, context) {
 
     const mailOptions = {
       from: `"TECHVERY Website" <princeshiloja3s@gmail.com>`,
-      to: "utsav8746@gmail.com",
+      to: data.email_to || "utsav8746@gmail.com, aliah@techvery.com",
       subject: "Techvery Form",
       html: `
         <div style="font-family: Arial, sans-serif; padding: 24px; color: #111; max-width: 600px; margin: 0 auto; border: 1px solid #e5e5e5; border-radius: 8px;">

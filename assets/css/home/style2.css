@@ -2553,6 +2553,7 @@ figure {
 }
 
 .home-1-service-image-wrapper {
+    position: relative !important;
     border-radius: var(--_spacing-responsiveness---radious--radius-large);
     max-width: 485px;
     max-height: 190px;
