@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const forms = document.querySelectorAll('form[action="https://api.web3forms.com/submit"]');
+  const forms = document.querySelectorAll("form");
 
   forms.forEach(function (form) {
     // Ensure submit buttons are enabled and clickable
@@ -28,36 +28,71 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       if (doneMessage) doneMessage.style.display = "none";
-      if (failMessage) failMessage.style.display = "none";
-
       const formData = new FormData(form);
+      const payload = {};
+      const selectEls = form.querySelectorAll("select");
+      selectEls.forEach(function (sel) {
+        if (sel.name) {
+          const selectedOption = sel.options[sel.selectedIndex];
+          if (selectedOption) {
+            const text = selectedOption.text.trim();
+            const val = selectedOption.value.trim();
+            if (val && val !== "First" && val !== "Second" && val !== "Third") {
+              payload[sel.name] = val;
+            } else if (text && !text.toLowerCase().includes("select")) {
+              payload[sel.name] = text;
+            }
+          }
+        }
+      });
 
-      fetch("https://api.web3forms.com/submit", {
+      formData.forEach(function (value, key) {
+        if (!payload[key]) {
+          payload[key] = value;
+        }
+      });
+      payload.email_to = "utsav8746@gmail.com";
+
+      function handleSuccess() {
+        form.style.display = "none";
+        if (doneMessage) doneMessage.style.display = "block";
+      }
+
+      function handleFailure(err) {
+        console.error("Gmail SMTP Error:", err);
+        if (failMessage) failMessage.style.display = "block";
+      }
+
+      function resetBtn() {
+        if (submitBtn) {
+          if (submitBtn.tagName === "INPUT") submitBtn.value = originalBtnValue;
+          else submitBtn.innerText = originalBtnValue;
+          submitBtn.disabled = false;
+          submitBtn.removeAttribute("disabled");
+        }
+      }
+
+      // Exclusively send via Nodemailer Gmail SMTP (Sender: princeshiloja3s@gmail.com)
+      const isLocal = window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1" || !window.location.hostname || window.location.protocol === "file:";
+      const endpoint = isLocal ? "http://localhost:3000/api/send-email" : "/.netlify/functions/send-email";
+
+      fetch(endpoint, {
         method: "POST",
-        body: formData
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
       })
-        .then(async function (response) {
-          const json = await response.json();
-          if (response.status === 200 && json.success) {
-            form.style.display = "none";
-            if (doneMessage) doneMessage.style.display = "block";
+        .then(async function (res) {
+          const json = await res.json().catch(() => ({}));
+          if (res.ok && json.success) {
+            handleSuccess();
           } else {
-            console.error("Web3Forms submission failed:", json);
-            if (failMessage) failMessage.style.display = "block";
+            handleFailure(json);
           }
         })
-        .catch(function (error) {
-          console.error("Web3Forms submission error:", error);
-          if (failMessage) failMessage.style.display = "block";
-        })
-        .finally(function () {
-          if (submitBtn) {
-            if (submitBtn.tagName === "INPUT") submitBtn.value = originalBtnValue;
-            else submitBtn.innerText = originalBtnValue;
-            submitBtn.disabled = false;
-            submitBtn.removeAttribute("disabled");
-          }
-        });
+        .catch(handleFailure)
+        .finally(resetBtn);
     }, true);
   });
 
