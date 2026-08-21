@@ -67,11 +67,11 @@
             min-height: 580px !important;
             max-height: 600px !important;
             padding: 24px !important;
-            border: 1px solid var(--_colors---color--color-border-primary, #e3e3e3) !important;
+            border: 1px solid rgba(255, 255, 255, 0.08) !important;
             border-right: none !important;
             overflow: hidden !important;
             cursor: pointer !important;
-            background-color: #ffffff !important;
+            background-color: #31313b !important;
             transition: flex 0.5s cubic-bezier(0.25, 1, 0.4, 1), width 0.5s cubic-bezier(0.25, 1, 0.4, 1), background-color 0.3s ease !important;
             box-sizing: border-box !important;
             display: flex !important;
@@ -79,21 +79,18 @@
         }
 
         .home-1-service-card:last-child {
-            border-right: 1px solid var(--_colors---color--color-border-primary, #e3e3e3) !important;
+            border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
         }
 
-        .home-1-service-card.active {
-            flex: 1 1 45% !important;
-            background-color: #ffffff !important;
-        }
+        .home-1-service-card.active { flex: 1 1 45% !important; background-color: #1E1E24 !important; border-color: rgba(255, 255, 255, 0.25) !important; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35) !important; }
 
         /* Subtle hover effect indicating clickable state without expanding */
         .home-1-service-card:not(.active):hover {
-            background-color: #f3f4f6 !important;
+            background-color: #3A3A45 !important;
         }
 
         .home-1-service-card:not(.active):hover .home-1-service-bg {
-            background-color: #f3f4f6 !important;
+            background-color: #3A3A45 !important;
         }
 
         /* Content inside card */
@@ -121,7 +118,7 @@
             flex-direction: column !important;
             justify-content: space-between !important;
             padding: 24px 14px !important;
-            background-color: #fafafa !important;
+            background-color: #31313b !important;
             opacity: 1 !important;
             pointer-events: auto !important;
             transition: opacity 0.35s ease, background-color 0.3s ease !important;
@@ -220,7 +217,7 @@
                 flex: 1 1 auto !important;
                 min-height: auto !important;
                 max-height: none !important;
-                border-right: 1px solid var(--_colors---color--color-border-primary, #e3e3e3) !important;
+                border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
                 border-bottom: none !important;
             }
 

@@ -339,6 +339,7 @@
 }
 
 @media (max-width: 991px) {
+
     .combined-track-record,
     .awards {
         grid-template-columns: 1fr;
@@ -410,14 +411,14 @@
 }
 
 .footer-custom-text {
-    font-family: var(--font-family--font-family), sans-serif;
-    color: #ffffff;
-    font-size: 146px;
-    font-weight: 900;
-    line-height: 1;
-    letter-spacing: -3px;
-    text-transform: uppercase;
-    user-select: none;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif !important;
+    color: #ffffff !important;
+    font-size: 130px !important;
+    font-weight: 800 !important;
+    line-height: 1 !important;
+    letter-spacing: 0px !important;
+    text-transform: uppercase !important;
+    user-select: none !important;
 }
 
 /* Responsive styles for custom footer banner */
@@ -432,8 +433,8 @@
     }
 
     .footer-custom-text {
-        font-size: 70px;
-        letter-spacing: -2px;
+        font-size: 65px !important;
+        letter-spacing: 0px !important;
     }
 }
 
@@ -452,8 +453,8 @@
     }
 
     .footer-custom-text {
-        font-size: 44px;
-        letter-spacing: -1px;
+        font-size: 42px !important;
+        letter-spacing: 0px !important;
     }
 }
 
@@ -472,8 +473,8 @@
     }
 
     .footer-custom-text {
-        font-size: 32px;
-        letter-spacing: -1px;
+        font-size: 30px !important;
+        letter-spacing: 0px !important;
     }
 }
 
@@ -1801,16 +1802,17 @@
 }
 
 .footer-marquee-wrapper {
-    margin-bottom: 1.25rem !important;
+    margin-bottom: 0 !important;
 }
 
 .footer-wrapper {
     display: flex !important;
     flex-direction: column !important;
-    gap: 1.75rem !important;
-    row-gap: 1.75rem !important;
-    grid-row-gap: 1.75rem !important;
+    gap: 2rem !important;
+    row-gap: 2rem !important;
+    grid-row-gap: 2rem !important;
     width: 100% !important;
+    margin-top: 2.25rem !important;
     margin-bottom: 0 !important;
     padding-bottom: 0 !important;
 }
@@ -1833,6 +1835,24 @@
     background: #E01A22 !important;
     background-image: none !important;
     box-shadow: none !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+/* Zero out all bottom padding below red banner across all pages */
+.footer-wrapper,
+.container.footer,
+.w-layout-blockcontainer.container.footer,
+.section:has(.footer-custom-banner),
+.section:has(.container.footer) {
+    padding-bottom: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+body > section:last-of-type,
+body > div > section:last-of-type,
+.main-wrapper ~ section:last-of-type {
+    padding-bottom: 0 !important;
     margin-bottom: 0 !important;
 }
 
@@ -1951,14 +1971,57 @@
     border-color: #E01A22 !important;
 }
 
-.cta-offer-card {
-    background-color: rgba(255, 255, 255, 0.04) !important;
-    border: 1px solid rgba(255, 255, 255, 0.06) !important;
-    border-radius: 6px !important;
+.cta-offer-main-wrapper {
+    display: flex !important;
+    align-items: center !important;
 }
 
-.cta-offer-card .text-small {
-    color: #D4D4D8 !important;
+.cta-offer-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    gap: 1.2rem !important;
+}
+
+.cta-offer-holder {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    gap: 1.15rem !important;
+    grid-row-gap: 1.15rem !important;
+}
+
+.cta-offer-card {
+    display: flex !important;
+    align-items: center !important;
+    background-color: transparent !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+}
+
+.cta-offer-card .text-small,
+.cta-offer-card .paragraph {
+    background-color: transparent !important;
+    background: transparent !important;
+    border: none !important;
+    color: #E4E4E7 !important;
+    font-size: 0.95rem !important;
+    line-height: 1.2 !important;
+}
+
+.cta-offer-highlight {
+    display: inline-block !important;
+    background-color: #FF5812 !important;
+    width: 8px !important;
+    min-width: 8px !important;
+    height: 8px !important;
+    min-height: 8px !important;
+    border-radius: 1px !important;
+    margin-right: 10px !important;
+    flex-shrink: 0 !important;
 }
 
 .cta-holder .cta-text-area,
@@ -2029,10 +2092,9 @@
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35) !important;
 }
 
-/* Headings & Main Text */
+/* Headings & Main Text for Our Expertise section */
 .home-1-service-card h3,
 .home-1-service-card .home-1-service-header-wrapper h3,
-.home-1-service-card .hero-service-category-holder,
 .home-1-service-card .service-a-title {
     color: #FFFFFF !important;
     font-weight: 600 !important;
@@ -2040,7 +2102,6 @@
 
 /* Vertical Category Titles on Collapsed Listing Cards */
 .home-1-service-text,
-.hero-service-category-holder div,
 .home-1-service-card .home-1-service-text {
     color: #FFFFFF !important;
     font-weight: 600 !important;
@@ -2076,4 +2137,103 @@
 
 .home-1-service-card .cms-service-tag {
     color: #FFFFFF !important;
+}
+
+/* --- Hero Bottom Service Cards (.hero-service-link-wrapper) Black Text & Black Hover --- */
+.hero-service-link-wrapper .hero-service-main-category,
+.hero-service-link-wrapper .hero-service-main-category div,
+.hero-service-link-wrapper .hero-service-category-holder,
+.hero-service-link-wrapper .hero-service-category-holder div,
+.hero-service-link-wrapper .text-xsmall-medium {
+    color: #111111 !important;
+    font-weight: 600 !important;
+}
+
+.hero-service-link-wrapper:hover .hero-service-main-category,
+.hero-service-link-wrapper:hover .hero-service-main-category div,
+.hero-service-link-wrapper:hover .hero-service-category-holder,
+.hero-service-link-wrapper:hover .hero-service-category-holder div,
+.hero-service-link-wrapper:hover .text-xsmall-medium {
+    color: #000000 !important;
+    font-weight: 700 !important;
+}
+
+/* --- Clear, Full Thumbnail Images (Remove Dark Shadow Overlays) --- */
+.hero-1-service-shadow-wrapper,
+.hero-1-service-shadow-card {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+}
+
+.hero-service-image-wrapper {
+    overflow: hidden !important;
+    border-radius: 8px !important;
+}
+
+.hero-service-image {
+    object-fit: cover !important;
+    object-position: center !important;
+    opacity: 1 !important;
+    filter: none !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* --- Styling & Spacing for Privacy Policy & Terms & Conditions Pages --- */
+.main-wrapper {
+    padding-top: 0 !important;
+}
+
+.main-wrapper > .section:first-child {
+    padding-top: 1.5rem !important;
+}
+
+.policy-hero-header-wrapper,
+.condition-hero-header-wrapper {
+    margin-bottom: 2rem !important;
+    text-align: left !important;
+}
+
+.condition-hero-h1 {
+    font-size: 2.75rem !important;
+    font-weight: 800 !important;
+    color: #111111 !important;
+    margin-bottom: 0.5rem !important;
+    line-height: 1.2 !important;
+}
+
+.hero-sub-text {
+    font-size: 1.1rem !important;
+    color: #555555 !important;
+}
+
+.privacy-policy-wrapper,
+.terms-wrapper {
+    color: #222222 !important;
+    font-size: 1rem !important;
+    line-height: 1.7 !important;
+}
+
+.privacy-policy-wrapper h2,
+.terms-wrapper h2 {
+    color: #111111 !important;
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    margin-top: 2rem !important;
+    margin-bottom: 0.75rem !important;
+}
+
+.privacy-policy-wrapper p,
+.terms-wrapper p {
+    color: #333333 !important;
+    margin-bottom: 1rem !important;
+}
+
+.privacy-contact-box {
+    background: #f8f9fa !important;
+    border: 1px solid #e9ecef !important;
+    border-radius: 12px !important;
+    padding: 1.5rem !important;
+    margin-top: 1rem !important;
 }
