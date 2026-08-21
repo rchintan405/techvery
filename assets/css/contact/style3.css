@@ -299,21 +299,45 @@
     line-height: 24px;
 }
 
+.combined-track-record,
 .awards {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 30px;
     align-items: center;
 }
 
-.awards-rightside {
+.award-rightside,
+.combined-track-record-rightside {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
-.awards-rightsideimg {
-    max-height: 450px;
+.awards-rightsideimg,
+.combined-track-record-rightsideimg {
+    max-width: 100%;
+    max-height: 500px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
+.track-record-note {
+    font-size: 13px;
+    color: #787878;
+    margin-top: 16px;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+@media (max-width: 991px) {
+    .combined-track-record,
+    .awards {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
 }
 
 /* --- Custom Animated Red Gradient Footer Banner with Video Masked Logo --- */
@@ -323,9 +347,7 @@
     padding: 60px 20px;
     /* margin-top: 40px; */
     /* margin-bottom: 40px; */
-    background: linear-gradient(-45deg, #FD4E57, #E01A22, #B30E15, #FD4E57);
-    background-size: 400% 400%;
-    animation: footerGradientAnimation 10s ease infinite;
+    background: #E01A22;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1393,4 +1415,88 @@
 
 .w-inline-block {
     display: flex;
+}
+
+/* --- Footer Spacing & Layout Consistency --- */
+.container.footer {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2.5rem !important;
+    row-gap: 2.5rem !important;
+    padding-top: 2.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
+.footer-marquee-wrapper {
+    margin-bottom: 1.25rem !important;
+}
+
+.footer-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.75rem !important;
+    row-gap: 1.75rem !important;
+    grid-row-gap: 1.75rem !important;
+    width: 100% !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.footer-copyright-wrapper {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.footer-marquee-left-shadow,
+.footer-marquee-right-shadow {
+    display: none !important;
+    background: none !important;
+}
+
+.footer-custom-banner {
+    animation: none !important;
+    background: #E01A22 !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    margin-bottom: 0 !important;
+}
+
+/* --- Make 4 Right-Side Sub-Service Item Cards Completely Non-Clickable --- */
+.service-1-holder,
+.service-1-holder *,
+.service-1-card-holder,
+.service-1-card-holder *,
+.service-card-content-wrapper,
+.service-card-content-wrapper *,
+.service-solution-collectiuon-item,
+.service-solution-collectiuon-item *,
+.service-solution-link-wrapper,
+.service-solution-link-wrapper * {
+    cursor: default !important;
+}
+
+.service-1-card-holder:hover,
+.service-solution-link-wrapper:hover,
+.service-solution-collectiuon-item:hover {
+    background-color: var(--_colors---color--color-white) !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Ensure Outer Service Links and Explore Service Buttons Remain Fully Clickable */
+.service-1-link-wrapper,
+.service-2-link-wrapper,
+.primary-button,
+.hero-1-primary-button,
+.primary-button-text-wrapper,
+.primary-button-icon-wrapper {
+    pointer-events: auto !important;
+}
+
+.primary-button:hover,
+.hero-1-primary-button:hover,
+.service-explore-button:hover {
+    cursor: pointer !important;
 }

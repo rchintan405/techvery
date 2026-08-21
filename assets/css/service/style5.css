@@ -676,17 +676,7 @@ figure {
 }
 
 .bottom-shadow {
-    z-index: 99;
-    width: var(--_spacing-responsiveness---max--max-percent);
-    background-color: var(--_colors---color--color-transparent);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    pointer-events: none;
-    height: 6rem;
-    position: fixed;
-    inset: auto 0% 0%;
-    -webkit-mask-image: linear-gradient(#0000 0%, #000 60%);
-    mask-image: linear-gradient(#0000 0%, #000 60%)
+    display: none !important;
 }
 
 .nav-dropdown-list {
@@ -6887,4 +6877,42 @@ figure {
     visibility: hidden !important;
     opacity: 0 !important;
     pointer-events: none !important;
+}
+
+/* --- Make 4 Right-Side Sub-Service Item Cards Completely Non-Clickable --- */
+.service-1-holder,
+.service-1-holder *,
+.service-1-card-holder,
+.service-1-card-holder *,
+.service-card-content-wrapper,
+.service-card-content-wrapper *,
+.service-solution-collectiuon-item,
+.service-solution-collectiuon-item *,
+.service-solution-link-wrapper,
+.service-solution-link-wrapper * {
+    cursor: default !important;
+}
+
+.service-1-card-holder:hover,
+.service-solution-link-wrapper:hover,
+.service-solution-collectiuon-item:hover {
+    background-color: var(--_colors---color--color-white) !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Ensure Outer Service Links and Explore Service Buttons Remain Fully Clickable */
+.service-1-link-wrapper,
+.service-2-link-wrapper,
+.primary-button,
+.hero-1-primary-button,
+.primary-button-text-wrapper,
+.primary-button-icon-wrapper {
+    pointer-events: auto !important;
+}
+
+.primary-button:hover,
+.hero-1-primary-button:hover,
+.service-explore-button:hover {
+    cursor: pointer !important;
 }

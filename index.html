@@ -26,8 +26,26 @@
   <meta content="Webflow" name="generator" />
   <link href="assets/css/home/style.css" rel="stylesheet" type="text/css" />
   <link href="assets/css/home/style2.css" rel="stylesheet" type="text/css" />
-  <link href="assets/css/global/global.css" rel="stylesheet" type="text/css" />
   <style>
+    .bottom-shadow,
+    .home-2-marquee-bottom-shadow,
+    .home-2-marquee-top-shadow,
+    .footer-marquee-left-shadow,
+    .footer-marquee-right-shadow {
+      display: none !important;
+      opacity: 0 !important;
+      visibility: hidden !important;
+      height: 0 !important;
+      pointer-events: none !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+
+    /* --- CTA Card Corner Curvature (24px) --- */
+    .cta-holder {
+      border-radius: 24px !important;
+    }
+
     @media (min-width:992px) {
       html.w-mod-js:not(.w-mod-ix) [data-w-id="f02b7aa6-8831-0ad9-fcab-c9628c4d0b43"] {
         width: 15%;
@@ -582,6 +600,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="assets/css/global/global.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body class="body">
@@ -1683,8 +1702,8 @@
           class="home-1-work-bottom-button"><a data-w-id="654accba-744a-af25-9e53-423eac20348a"
             href="featured-work.html" class="primary-button w-inline-block">
             <div class="primary-button-text-wrapper">
-              <div class="primary-button-text is-absolute">VIEW ALL WORK</div>
-              <div class="primary-button-text is-relative">VIEW ALL WORK</div>
+              <div class="primary-button-text is-absolute">VIEW ALL WORKS</div>
+              <div class="primary-button-text is-relative">VIEW ALL WORKS</div>
             </div>
             <div class="primary-button-icon-wrapper">
               <div class="primary-button-icon is-absolute w-embed"><svg width="10" height="12" viewBox="0 0 10 12"
@@ -1704,7 +1723,7 @@
       </div>
     </div>
   </section>
-    <section class="section">
+  <section class="section">
     <div class="w-layout-blockcontainer container w-container">
       <div class="section-wrapper home-1-service">
         <div class="section-header-wrapper">
@@ -2561,7 +2580,7 @@
       </div>
     </div>
   </section>
-  <section class="section dark">
+  <!-- <section class="section dark">
     <div class="w-layout-blockcontainer container home-1-testimonial w-container">
       <div class="section-wrapper home-2-testimonial">
         <div class="section-header-wrapper home-2-award">
@@ -2848,21 +2867,21 @@
         </div>
       </div>
     </div>
-  </section>
+  </section> -->
   <section class="section">
     <div class="w-layout-blockcontainer container w-container">
       <div class="section-wrapper">
         <div class="section-header-wrapper">
-          <h2 data-w-id="fc0968bf-bd2d-f8dc-b4bb-dcc274297d3e" class="section-heading">Awards Achievement</h2>
+          <h2 data-w-id="fc0968bf-bd2d-f8dc-b4bb-dcc274297d3e" class="section-heading">Our Team’s Collective Impact</h2>
           <div data-w-id="fc0968bf-bd2d-f8dc-b4bb-dcc274297d40" class="section-header-divider-wrapper">
             <div class="section-header-divider"></div>
           </div>
           <div data-w-id="fc0968bf-bd2d-f8dc-b4bb-dcc274297d42" class="home-1-award-tag-wrapper">
             <div class="brand-circle"></div>
-            <div class="section-tag">AWARDS</div>
+            <div class="section-tag">COMBINED TRACK RECORD</div>
           </div>
         </div>
-        <div class="awards">
+        <div class="combined-track-record awards">
           <div class="home-1-award-wrapper">
             <div data-w-id="fc0968bf-bd2d-f8dc-b4bb-dcc274297d47" class="home-1-award-card-wrapper">
               <div class="award-title-wrapper">
@@ -2877,8 +2896,8 @@
                     </svg></div>
                 </div>
                 <div class="award-title-holder">
-                  <div class="home-1-award-heading">Enterprise Software Excellence<br /></div>
-                  <div class="text-xsmall paragraph">Featured Project</div>
+                  <div class="home-1-award-heading">Cumulative Industry Experience<br /></div>
+                  <div class="text-xsmall paragraph">Across Our Leadership Team</div>
                 </div>
               </div>
               <div class="award-image-wrapper hide-mobile"><img loading="lazy"
@@ -2886,7 +2905,7 @@
                   alt="Transparent circular glass award with red and blue reflections on a white rectangular base."
                   class="award-image" /></div>
               <div class="award-number-wrapper hide-mobile">
-                <div class="text-base-small-medium">12×</div>
+                <div class="text-base-small-medium">19+ Years</div>
               </div>
               <div class="award-card-bg"></div>
             </div>
@@ -2901,8 +2920,8 @@
                     </svg></div>
                 </div>
                 <div class="award-title-holder">
-                  <div class="home-1-award-heading">Best AI Solution.</div>
-                  <div class="text-xsmall paragraph">Honourable Mention</div>
+                  <div class="home-1-award-heading"> Countries Served</div>
+                  <div class="text-xsmall paragraph">Global Market Reach</div>
                 </div>
               </div>
               <div class="award-image-wrapper hide-mobile"><img loading="lazy"
@@ -2910,7 +2929,8 @@
                   alt="Clear glass circular award with concentric ridges on a silver base, casting a shadow on a white surface."
                   class="award-image" /></div>
               <div class="award-number-wrapper hide-mobile">
-                <div class="text-base-small-medium">09×</div>
+                <div class="text-base-small-medium">100+
+                </div>
               </div>
               <div class="award-card-bg"></div>
             </div>
@@ -2928,8 +2948,8 @@
                     </svg></div>
                 </div>
                 <div class="award-title-holder">
-                  <div class="home-1-award-heading">Top Blockchain Innovator.</div>
-                  <div class="text-xsmall paragraph">Site of the Day</div>
+                  <div class="home-1-award-heading">Projects Delivered</div>
+                  <div class="text-xsmall paragraph">Cross-Sector Expertise</div>
                 </div>
               </div>
               <div class="award-image-wrapper hide-mobile"><img loading="lazy"
@@ -2937,7 +2957,7 @@
                   alt="Transparent circular glass award on a metallic base reflecting light and shadows."
                   class="award-image" /></div>
               <div class="award-number-wrapper hide-mobile">
-                <div class="text-base-small-medium">04×</div>
+                <div class="text-base-small-medium">2K+</div>
               </div>
               <div class="award-card-bg"></div>
             </div>
@@ -2958,8 +2978,8 @@
                     </svg></div>
                 </div>
                 <div class="award-title-holder">
-                  <div class="home-1-award-heading">Creatix Portfolio</div>
-                  <div class="text-xsmall paragraph">Featured Gallery</div>
+                  <div class="home-1-award-heading">Systems & Technology Solutions</div>
+                  <div class="text-xsmall paragraph">From Strategy to Deployment </div>
                 </div>
               </div>
               <div class="award-image-wrapper hide-mobile"><img loading="lazy"
@@ -2967,7 +2987,7 @@
                   alt="Transparent glass circular award mounted on a clear rectangular base, casting a shadow on a light floor."
                   class="award-image" /></div>
               <div class="award-number-wrapper hide-mobile">
-                <div class="text-base-small-medium">16×</div>
+                <div class="text-base-small-medium">End-to-End</div>
               </div>
               <div class="award-card-bg"></div>
             </div>
@@ -2991,8 +3011,8 @@
                     </svg></div>
                 </div>
                 <div class="award-title-holder">
-                  <div class="home-1-award-heading">Cybersecurity Excellence Award</div>
-                  <div class="text-xsmall paragraph">Top Creative Agency</div>
+                  <div class="home-1-award-heading">Global Support</div>
+                  <div class="text-xsmall paragraph">Reliable Technical Assistance</div>
                 </div>
               </div>
               <div class="award-image-wrapper hide-mobile">
@@ -3002,13 +3022,17 @@
                   class="award-image" />
               </div>
               <div class="award-number-wrapper hide-mobile">
-                <div class="text-base-small-medium">3×</div>
+                <div class="text-base-small-medium">24/7</div>
               </div>
               <div class="award-card-bg"></div>
             </div>
+            <p class="track-record-note">
+              Figures reflect the combined professional experience and previous work of Techvery’s leadership and
+              delivery team, rather than Techvery’s operating history
+            </p>
           </div>
 
-          <div class="awards-rightside">
+          <div class="award-rightside">
             <img src="./assets/images/awards.png" class="awards-rightsideimg" />
           </div>
         </div>
@@ -3106,7 +3130,8 @@
       </div>
     </div>
   </section>
-  <section class="section dark" style="background:linear-gradient(132.19deg, #202775 0.43%, #3841A2 99.57%);">
+  <section class="section dark"
+    style="display: none; background:linear-gradient(132.19deg, #202775 0.43%, #3841A2 99.57%);">
     <div class="w-layout-blockcontainer container w-container">
       <div class="section-wrapper">
         <div class="section-header-wrapper center">
@@ -3503,7 +3528,7 @@
       </div>
     </div>
   </section>
-  <section class="section">
+  <section class="section" style="display: none;">
     <div class="w-layout-blockcontainer container w-container">
       <div class="section-wrapper">
         <div class="section-header-wrapper">
@@ -3753,10 +3778,7 @@
                   </div>
                   <div class="cta-address-card">
                     <div class="text-medium">Office</div>
-                    <div class="text-base-small-medium paragraph">Office 1204, Business Bay<br /> Tower Business Bay,
-                      Dubai,<br />
-                      UAE P.O. Box 123456
-                    </div>
+                    <div class="text-base-small-medium paragraph">Dubai, United Arab Emirates</div>
                   </div>
                 </div>
               </div>
@@ -3969,13 +3991,13 @@
             <div class="footer-copyright-links">
               <a href="about/about-a.html" class="footer-copyright-link">About Us</a>
               <a href="contact.html" class="footer-copyright-link">Contact</a>
-              <a href="blog/blog-b.html" class="footer-copyright-link">Blog</a>
               <a href="privacy-policy.html" class="footer-copyright-link">Privacy Policy</a>
-              <a href="terms-condition.html" class="footer-copyright-link">Terms &amp; Condition</a>
+              <a href="terms-condition.html" class="footer-copyright-link">Terms &amp; Conditions</a>
               <a href="Techvery company profile.pdf" target="_blank" class="footer-copyright-link">Company Profile</a>
 
             </div>
-            <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="back-to-top-wrapper w-inline-block">
+            <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"
+              class="back-to-top-wrapper w-inline-block">
               <div class="back-to-top-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"
                   viewBox="0 0 24 24" fill="none" preserveAspectRatio="xMidYMid meet" aria-hidden="true" role="img">
                   <rect width="24" height="24" rx="2" fill="#FF5812" />

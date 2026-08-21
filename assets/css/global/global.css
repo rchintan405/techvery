@@ -305,22 +305,47 @@
     line-height: 24px;
 }
 
+.combined-track-record,
 .awards {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px;
+    gap: 30px;
     align-items: center;
 }
 
-.awards-rightside {
+.award-rightside,
+.combined-track-record-rightside {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
-.awards-rightsideimg {
-    max-height: 450px;
+.awards-rightsideimg,
+.combined-track-record-rightsideimg {
+    max-width: 100%;
+    max-height: 500px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
 }
+
+.track-record-note {
+    font-size: 13px;
+    color: #787878;
+    margin-top: 16px;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+@media (max-width: 991px) {
+    .combined-track-record,
+    .awards {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+}
+
 
 /* --- Custom Animated Red Gradient Footer Banner with Video Masked Logo --- */
 .footer-custom-banner {
@@ -329,9 +354,7 @@
     padding: 60px 20px;
     /* margin-top: 40px; */
     /* margin-bottom: 40px; */
-    background: linear-gradient(-45deg, #FD4E57, #E01A22, #B30E15, #FD4E57);
-    background-size: 400% 400%;
-    animation: footerGradientAnimation 10s ease infinite;
+    background: #E01A22;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1765,4 +1788,292 @@
     justify-content: center !important;
     width: 10px !important;
     height: 12px !important;
+}
+
+/* --- Footer Spacing & Layout Consistency --- */
+.container.footer {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 2.5rem !important;
+    row-gap: 2.5rem !important;
+    padding-top: 2.5rem !important;
+    padding-bottom: 0.5rem !important;
+}
+
+.footer-marquee-wrapper {
+    margin-bottom: 1.25rem !important;
+}
+
+.footer-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 1.75rem !important;
+    row-gap: 1.75rem !important;
+    grid-row-gap: 1.75rem !important;
+    width: 100% !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.footer-copyright-wrapper {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.footer-marquee-left-shadow,
+.footer-marquee-right-shadow {
+    display: none !important;
+    background: none !important;
+}
+
+.footer-custom-banner {
+    animation: none !important;
+    background: #E01A22 !important;
+    background-image: none !important;
+    box-shadow: none !important;
+    margin-bottom: 0 !important;
+}
+
+/* --- Completely Hide Fixed Bottom Blur Overlay (.bottom-shadow) --- */
+.bottom-shadow,
+.home-2-marquee-bottom-shadow,
+.home-2-marquee-top-shadow,
+.home-1-testimonial-shadow,
+.testimonial-light-shadow {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    width: 0 !important;
+    pointer-events: none !important;
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+}
+
+/* --- Make 4 Right-Side Sub-Service Item Cards Completely Non-Clickable --- */
+.service-1-holder,
+.service-1-holder *,
+.service-1-card-holder,
+.service-1-card-holder *,
+.service-card-content-wrapper,
+.service-card-content-wrapper *,
+.service-solution-collectiuon-item,
+.service-solution-collectiuon-item *,
+.service-solution-link-wrapper,
+.service-solution-link-wrapper * {
+    cursor: default !important;
+}
+
+.service-1-card-holder:hover,
+.service-solution-link-wrapper:hover,
+.service-solution-collectiuon-item:hover {
+    background-color: var(--_colors---color--color-white) !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Ensure Outer Service Links and Explore Service Buttons Remain Fully Clickable */
+.service-1-link-wrapper,
+.service-2-link-wrapper,
+.primary-button,
+.hero-1-primary-button,
+.primary-button-text-wrapper,
+.primary-button-icon-wrapper {
+    pointer-events: auto !important;
+}
+
+.primary-button:hover,
+.hero-1-primary-button:hover,
+.service-explore-button:hover {
+    cursor: pointer !important;
+}
+
+/* --- Global Dark Theme & Tight Spacing for CTA Section (.cta-holder) --- */
+.cta-holder {
+    background-color: #31313b !important;
+    color: #FFFFFF !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding: 2.25rem 2.5rem !important;
+    grid-column-gap: 2rem !important;
+    grid-row-gap: 2rem !important;
+    border-radius: 24px !important;
+}
+
+.cta-content-wrapper,
+.cta-contact-wrapper {
+    grid-column-gap: 1.5rem !important;
+    grid-row-gap: 1.5rem !important;
+}
+
+.cta-social-media-wrapper {
+    min-height: 48px !important;
+    max-height: 48px !important;
+}
+
+.cta-wrapper {
+    margin-top: 1.5rem !important;
+}
+
+.cta-form-field-wrapper {
+    grid-column-gap: 0.85rem !important;
+    grid-row-gap: 0.85rem !important;
+}
+
+.cta-holder .text-medium,
+.cta-holder .text-large,
+.cta-holder .text-xlarge,
+.cta-holder .cta-follow-us-text {
+    color: #FFFFFF !important;
+}
+
+.cta-holder .paragraph,
+.cta-holder .text-small,
+.cta-holder .text-base-small-medium {
+    color: #A1A1AA !important;
+}
+
+.cta-divider,
+.cta-content-divider {
+    background-color: rgba(255, 255, 255, 0.12) !important;
+    border-color: rgba(255, 255, 255, 0.12) !important;
+}
+
+.cta-holder .social-media-link.white {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    color: #FFFFFF !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+.cta-holder .social-media-link.white:hover {
+    background-color: #E01A22 !important;
+    border-color: #E01A22 !important;
+}
+
+.cta-offer-card {
+    background-color: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.06) !important;
+    border-radius: 6px !important;
+}
+
+.cta-offer-card .text-small {
+    color: #D4D4D8 !important;
+}
+
+.cta-holder .cta-text-area,
+.cta-holder .cta-text-big-area {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    color: #FFFFFF !important;
+    border-radius: 8px !important;
+}
+
+.cta-holder .cta-text-area::placeholder,
+.cta-holder .cta-text-big-area::placeholder {
+    color: rgba(255, 255, 255, 0.45) !important;
+}
+
+.cta-holder .cta-text-area:focus,
+.cta-holder .cta-text-big-area:focus {
+    border-color: #E01A22 !important;
+    background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+.cta-holder input[type="submit"].cta-buuton,
+.cta-holder .cta-buuton {
+    background-color: #E01A22 !important;
+    color: #FFFFFF !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    transition: background-color 0.3s ease !important;
+}
+
+.cta-holder input[type="submit"].cta-buuton:hover,
+.cta-holder .cta-buuton:hover {
+    background-color: #C0151C !important;
+}
+
+/* --- Global Styling for Our Expertise Section (.home-1-service-card) --- */
+.home-1-service-wrapper,
+.home-1-service-holder {
+    background-color: #31313b !important;
+    border-radius: 16px !important;
+    padding: 8px !important;
+}
+
+/* Collapsed / Listing Cards (#31313b) */
+.home-1-service-card {
+    background-color: #31313b !important;
+    background-image: none !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: #FFFFFF !important;
+    transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.home-1-service-bg {
+    background-image: none !important;
+    background-color: #31313b !important;
+    opacity: 1 !important;
+}
+
+.home-1-service-card:hover {
+    background-color: #3A3A45 !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Expanded / Active Card - Distinct Dark Card Highlight (#1E1E24) */
+.home-1-service-card.active {
+    background-color: #1E1E24 !important;
+    border-color: rgba(255, 255, 255, 0.25) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35) !important;
+}
+
+/* Headings & Main Text */
+.home-1-service-card h3,
+.home-1-service-card .home-1-service-header-wrapper h3,
+.home-1-service-card .hero-service-category-holder,
+.home-1-service-card .service-a-title {
+    color: #FFFFFF !important;
+    font-weight: 600 !important;
+}
+
+/* Vertical Category Titles on Collapsed Listing Cards */
+.home-1-service-text,
+.hero-service-category-holder div,
+.home-1-service-card .home-1-service-text {
+    color: #FFFFFF !important;
+    font-weight: 600 !important;
+}
+
+.home-1-service-card:hover .home-1-service-text {
+    color: #FF5812 !important;
+}
+
+/* Numbers & Labels: (01), (02), SERVICE */
+.home-1-service-number-wrapper .text-xsmall,
+.home-1-service-number-wrapper .paragraph,
+.home-1-service-number-wrapper div {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Bullet Points & Subtitles inside Expanded Card */
+.home-1-service-card .paragraph,
+.home-1-service-card .text-small,
+.home-1-service-card .service-points p {
+    color: #D4D4D8 !important;
+}
+
+.home-1-service-line {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Tech Stack Pills inside Expanded Card */
+.home-1-service-card .home-1-service-tag {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+}
+
+.home-1-service-card .cms-service-tag {
+    color: #FFFFFF !important;
 }

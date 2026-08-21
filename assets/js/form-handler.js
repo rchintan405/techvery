@@ -2,8 +2,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const forms = document.querySelectorAll("form");
 
   forms.forEach(function (form) {
+    // Force method to POST and action to javascript:void(0); to prevent GET redirects
+    form.setAttribute("method", "POST");
+    form.setAttribute("action", "javascript:void(0);");
+
     // Ensure submit buttons are enabled and clickable
-    const submitBtn = form.querySelector('input[type="submit"], button[type="submit"]');
+    const submitBtn = form.querySelector('input[type="submit"], button[type="submit"], .contact-button, .cta-buuton');
     if (submitBtn) {
       submitBtn.disabled = false;
       submitBtn.removeAttribute("disabled");
@@ -12,9 +16,25 @@ document.addEventListener("DOMContentLoaded", function () {
       submitBtn.style.cursor = "pointer";
     }
 
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      e.stopPropagation();
+    let isSubmitting = false;
+
+    function processSubmission(e) {
+      if (e) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+
+      if (isSubmitting) return;
+
+      // Check HTML5 input validity before submitting
+      if (typeof form.checkValidity === "function" && !form.checkValidity()) {
+        if (typeof form.reportValidity === "function") {
+          form.reportValidity();
+        }
+        return;
+      }
+
+      isSubmitting = true;
 
       const formWrapper = form.closest(".w-form") || form.parentElement;
       const doneMessage = formWrapper ? formWrapper.querySelector(".w-form-done") : null;
@@ -28,6 +48,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       if (doneMessage) doneMessage.style.display = "none";
+      if (failMessage) failMessage.style.display = "none";
+
       const formData = new FormData(form);
       const payload = {};
       const selectEls = form.querySelectorAll("select");
@@ -63,6 +85,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       function resetBtn() {
+        isSubmitting = false;
         if (submitBtn) {
           if (submitBtn.tagName === "INPUT") submitBtn.value = originalBtnValue;
           else submitBtn.innerText = originalBtnValue;
@@ -91,7 +114,15 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch(handleFailure)
         .finally(resetBtn);
-    }, true);
+    }
+
+    form.addEventListener("submit", processSubmission, true);
+
+    if (submitBtn) {
+      submitBtn.addEventListener("click", function (e) {
+        processSubmission(e);
+      });
+    }
   });
 
   // Service Accordion Interactive Click-Only Handler
@@ -160,7 +191,7 @@ document.addEventListener("DOMContentLoaded", function () {
         imageName: "ankursir.png"
       },
       {
-        name: "Aliah Techvery",
+        name: "Aliah Miranda",
         title: "CTO",
         imageName: "aliha.jpg"
       }
@@ -245,5 +276,17 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   initProfileRotator();
+
+  // Intercept and disable clicks on the 4 right-side sub-service cards
+  const subCards = document.querySelectorAll(
+    ".service-1-holder, .service-1-card-holder, .service-card-content-wrapper, .service-solution-collectiuon-item, .service-solution-link-wrapper"
+  );
+  subCards.forEach(function (card) {
+    card.addEventListener("click", function (e) {
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    }, true);
+  });
 });
 

@@ -717,17 +717,7 @@ figure {
 }
 
 .bottom-shadow {
-    z-index: 99;
-    width: var(--_spacing-responsiveness---max--max-percent);
-    background-color: var(--_colors---color--color-transparent);
-    -webkit-backdrop-filter: blur(20px);
-    backdrop-filter: blur(20px);
-    pointer-events: none;
-    height: 6rem;
-    position: fixed;
-    inset: auto 0% 0%;
-    -webkit-mask-image: linear-gradient(#0000 0%, #000 60%);
-    mask-image: linear-gradient(#0000 0%, #000 60%)
+    display: none !important;
 }
 
 .nav-dropdown-list {
