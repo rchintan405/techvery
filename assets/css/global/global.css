@@ -2130,11 +2130,16 @@ body > div > section:last-of-type,
 }
 
 /* Tech Stack Pills inside Expanded Card */
-.home-1-service-card .home-1-service-tag {
+.home-1-service-card .home-1-service-tag,
+.home-1-service-tag {
     background-color: rgba(255, 255, 255, 0.08) !important;
     border: 1px solid rgba(255, 255, 255, 0.12) !important;
 }
 
+.home-1-service-card .home-1-service-tag .text-xsmall,
+.home-1-service-tag .text-xsmall,
+.home-1-service-tag div,
+.home-1-service-tag span,
 .home-1-service-card .cms-service-tag {
     color: #FFFFFF !important;
 }
