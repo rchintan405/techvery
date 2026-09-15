@@ -12,47 +12,15 @@
 }
 
 /* Custom Navbar Profile & Talk Button Layout */
+.navbar-wrapper {
+    position: relative !important;
+}
+
 .nav-right-container {
     display: flex;
     align-items: center;
     gap: 16px;
-    margin-right: 20px;
-}
-
-.nav-talk-btn {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background-color: #17247c;
-    /* Dark blue background */
-    color: #ffffff !important;
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: background-color 0.2s ease;
-}
-
-.nav-talk-btn:hover {
-    background-color: #111a5e;
-}
-
-.nav-talk-icon-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 22px;
-    height: 22px;
-    background-color: #ffffff;
-    border-radius: 50%;
-}
-
-.nav-talk-icon-wrapper svg {
-    width: 8px;
-    height: 10px;
+    margin-left: auto;
 }
 
 .nav-profile-card {
@@ -110,11 +78,15 @@
 
 /* Custom Middle Navigation Links */
 .nav-middle-links {
-    display: flex;
-    align-items: center;
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    display: flex !important;
+    align-items: center !important;
     gap: 24px;
-    margin-left: auto;
-    margin-right: auto;
+    z-index: 10;
+    white-space: nowrap;
 }
 
 .nav-middle-link {
@@ -141,7 +113,90 @@
     }
 
     .nav-middle-link {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    .nav-middle-links {
+        gap: 10px;
+    }
+
+    .nav-middle-link {
         font-size: 13px;
+    }
+}
+
+/* About Page Team/Leadership Slider Card (Fixed 350px Height & Social Icons Flex End) */
+.about-1-team-card {
+    height: 350px !important;
+    box-sizing: border-box !important;
+}
+
+.about-1-team-card-grid {
+    height: 100% !important;
+    align-items: stretch !important;
+}
+
+.about-1-team-image-wrapper {
+    height: 100% !important;
+    max-height: 100% !important;
+    border-radius: var(--_spacing-responsiveness---radious--radius-2xsmall);
+    overflow: hidden !important;
+}
+
+.about-1-team-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+.about-1-team-content-wrapper {
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+}
+
+.about-1-team-heading-holder {
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+    width: 100% !important;
+}
+
+.home-1-team-social-media-wrapper {
+    margin-top: auto !important;
+    display: flex !important;
+    align-items: center !important;
+    align-self: flex-start !important;
+}
+
+.about-1-team-grid {
+    height: 350px !important;
+}
+
+.about-1-team-number-wrapper {
+    height: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    align-items: flex-end !important;
+}
+
+@media screen and (max-width: 767px) {
+    .about-1-team-card {
+        height: auto !important;
+        min-height: 350px !important;
+    }
+    .about-1-team-grid {
+        height: auto !important;
+    }
+    .about-1-team-image-wrapper {
+        height: 220px !important;
     }
 }
 
