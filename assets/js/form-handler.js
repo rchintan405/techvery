@@ -50,27 +50,59 @@ document.addEventListener("DOMContentLoaded", function () {
       if (doneMessage) doneMessage.style.display = "none";
       if (failMessage) failMessage.style.display = "none";
 
-      const formData = new FormData(form);
-      const payload = {};
-      const selectEls = form.querySelectorAll("select");
-      selectEls.forEach(function (sel) {
-        if (sel.name) {
-          const selectedOption = sel.options[sel.selectedIndex];
-          if (selectedOption) {
-            const text = selectedOption.text.trim();
-            const val = selectedOption.value.trim();
-            if (val && val !== "First" && val !== "Second" && val !== "Third") {
-              payload[sel.name] = val;
-            } else if (text && !text.toLowerCase().includes("select")) {
-              payload[sel.name] = text;
+      const payload = {
+        page: window.location.pathname.split("/").pop() || "index.html",
+        source: document.title || "Techvery Website"
+      };
+
+      // Extract all form inputs cleanly
+      const allInputs = form.querySelectorAll("input, select, textarea");
+      allInputs.forEach(function (input) {
+        if (input.type === "submit" || input.type === "button" || input.type === "checkbox" || input.name === "botcheck") return;
+        if (input.name && input.name.includes("turnstile")) return;
+
+        const val = (input.value || "").trim();
+        if (!val) return;
+
+        const nameAttr = input.name || "";
+        const placeholder = (input.getAttribute("placeholder") || "").toLowerCase();
+        const idAttr = (input.id || "").toLowerCase();
+
+        // 1. Full Name
+        if (nameAttr === "CTA-Name" || placeholder.includes("full name") || idAttr === "cta-name" || nameAttr === "Full Name") {
+          payload["Name"] = val;
+        }
+        // 2. Email
+        else if (nameAttr.toLowerCase() === "email" || placeholder.includes("mail") || idAttr === "email") {
+          payload["Email Address"] = val;
+        }
+        // 3. Company Name
+        else if (placeholder.includes("company") || nameAttr === "Company Name" || (nameAttr === "name" && input.closest(".cta-form-field-wrapper"))) {
+          payload["Company Name"] = val;
+        }
+        // 4. Phone
+        else if (nameAttr === "Phone" || placeholder.includes("phone") || idAttr === "phone") {
+          payload["Phone Number"] = val;
+        }
+        // 5. Budget (Select or input)
+        else if (nameAttr === "Budget" || placeholder.includes("budget") || input.tagName === "SELECT") {
+          if (input.tagName === "SELECT") {
+            const selectedOption = input.options[input.selectedIndex];
+            const optVal = selectedOption ? (selectedOption.value || selectedOption.text).trim() : "";
+            if (optVal && !optVal.toLowerCase().includes("select")) {
+              payload["Budget"] = optVal;
             }
+          } else {
+            payload["Budget"] = val;
           }
         }
-      });
-
-      formData.forEach(function (value, key) {
-        if (!payload[key]) {
-          payload[key] = value;
+        // 6. Message
+        else if (nameAttr === "Message" || nameAttr === "field" || placeholder.includes("message") || input.tagName === "TEXTAREA") {
+          payload["Message"] = val;
+        }
+        // 7. Fallback for any other valid field
+        else {
+          payload[nameAttr || input.id] = val;
         }
       });
 
@@ -95,7 +127,8 @@ document.addEventListener("DOMContentLoaded", function () {
       }
 
       // Send form data to the Cloudflare Worker, which relays it to Resend's REST API
-      const endpoint = "https://techvery-mail.rchintan405.workers.dev/";
+      // const endpoint = "http://localhost:4011/api/v1/techvery/contact";
+      const endpoint = "https://kretossadminapi.kretosstechnology.com/api/v1/techvery/contact";
 
       fetch(endpoint, {
         method: "POST",

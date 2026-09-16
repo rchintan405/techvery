@@ -17,9 +17,9 @@
     --letter-spacing--letter-spacing-heading-3: -2px;
     --_colors---color--color-transparent: #fff0;
     --_spacing-responsiveness---max--container-max-width: 1440px;
-    --_spacing-responsiveness---container--container-spacing-vertical: 5rem;
+    --_spacing-responsiveness---container--container-spacing-vertical: 3rem;
     --_spacing-responsiveness---container--container-spacing-horizontal: 2rem;
-    --_spacing-responsiveness---section--spacing-xlarge: 24px;
+    --_spacing-responsiveness---section--spacing-xlarge: 12px;
     --_colors---color--color-background-secondary: whitesmoke;
     --_spacing-responsiveness---max--max-percent: 100%;
     --_spacing-responsiveness---section--section-spacing-gap: 4rem;
@@ -61,7 +61,7 @@
     --_colors---color--color-primary: #ff5911;
     --_colors---color--color-background-tertiary: #9e9e9e;
     --_colors---color--color-background-dark: #414141;
-    --_spacing-responsiveness---section--spacing-2xl: 32px;
+    --_spacing-responsiveness---section--spacing-2xl: 15px;
     --_spacing-responsiveness---section--spacing-3xl: 40px;
     --_spacing-responsiveness---section--spacing-3xlarge: 30px;
     --_spacing-responsiveness---section--spacing-small: 8px;
@@ -108,9 +108,9 @@ body {
     line-height: var(--line-hight--line-height-3xloose);
     font-weight: var(--font-weight--font-weight-normal);
     --_spacing-responsiveness---max--container-max-width: 1440px;
-    --_spacing-responsiveness---container--container-spacing-vertical: 5rem;
+    --_spacing-responsiveness---container--container-spacing-vertical: 3rem;
     --_spacing-responsiveness---container--container-spacing-horizontal: 2rem;
-    --_spacing-responsiveness---section--spacing-xlarge: 24px;
+    --_spacing-responsiveness---section--spacing-xlarge: 12px;
     --_spacing-responsiveness---max--max-percent: 100%;
     --_spacing-responsiveness---section--section-spacing-gap: 4rem;
     --_spacing-responsiveness---section--spacing-medium: 16px;
@@ -123,7 +123,7 @@ body {
     --_spacing-responsiveness---section--spacing-2xlarge: 28px;
     --_spacing-responsiveness---radious--radius-xsmall: 4px;
     --_spacing-responsiveness---radious--r-round\<deleted\|variable-b9a27c4f-ad86-d33f-2deb-5045ba8e1685\>: 100%;
-    --_spacing-responsiveness---section--spacing-2xl: 32px;
+    --_spacing-responsiveness---section--spacing-2xl: 15px;
     --_spacing-responsiveness---section--spacing-3xl: 40px;
     --_spacing-responsiveness---section--spacing-3xlarge: 30px;
     --_spacing-responsiveness---section--spacing-small: 8px;
@@ -1435,7 +1435,7 @@ figure {
 }
 
 .contact-text-area {
-    min-height: 160px;
+    min-height: 100px;
     padding: var(--_spacing-responsiveness---section--spacing-base)var(--_spacing-responsiveness---section--spacing-medium);
     border-radius: var(--_spacing-responsiveness---radious--radius-2xsmall);
     background-color: var(--_colors---color--color-white);
@@ -1813,7 +1813,7 @@ figure {
         --_spacing-responsiveness---section--spacing-2xlarge: 28px;
         --_spacing-responsiveness---radious--radius-xsmall: 4px;
         --_spacing-responsiveness---radious--r-round\<deleted\|variable-b9a27c4f-ad86-d33f-2deb-5045ba8e1685\>: 100%;
-        --_spacing-responsiveness---section--spacing-2xl: 32px;
+        --_spacing-responsiveness---section--spacing-2xl: 15px;
         --_spacing-responsiveness---section--spacing-3xl: 40px;
         --_spacing-responsiveness---section--spacing-3xlarge: 30px;
         --_spacing-responsiveness---section--spacing-small: 8px;
@@ -3611,7 +3611,7 @@ figure {
         --_spacing-responsiveness---section--spacing-2xlarge: 28px;
         --_spacing-responsiveness---radious--radius-xsmall: 4px;
         --_spacing-responsiveness---radious--r-round\<deleted\|variable-b9a27c4f-ad86-d33f-2deb-5045ba8e1685\>: 100%;
-        --_spacing-responsiveness---section--spacing-2xl: 32px;
+        --_spacing-responsiveness---section--spacing-2xl: 15px;
         --_spacing-responsiveness---section--spacing-3xl: 40px;
         --_spacing-responsiveness---section--spacing-3xlarge: 30px;
         --_spacing-responsiveness---section--spacing-small: 8px;
@@ -4631,7 +4631,7 @@ figure {
         --_spacing-responsiveness---section--spacing-2xlarge: 28px;
         --_spacing-responsiveness---radious--radius-xsmall: 4px;
         --_spacing-responsiveness---radious--r-round\<deleted\|variable-b9a27c4f-ad86-d33f-2deb-5045ba8e1685\>: 100%;
-        --_spacing-responsiveness---section--spacing-2xl: 32px;
+        --_spacing-responsiveness---section--spacing-2xl: 15px;
         --_spacing-responsiveness---section--spacing-3xl: 40px;
         --_spacing-responsiveness---section--spacing-3xlarge: 30px;
         --_spacing-responsiveness---section--spacing-small: 8px;

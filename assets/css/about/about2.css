@@ -17,7 +17,7 @@
     --letter-spacing--letter-spacing-heading-3: -2px;
     --_colors---color--color-transparent: #fff0;
     --_spacing-responsiveness---max--container-max-width: 1440px;
-    --_spacing-responsiveness---container--container-spacing-vertical: 5rem;
+    --_spacing-responsiveness---container--container-spacing-vertical: 3rem;
     --_spacing-responsiveness---container--container-spacing-horizontal: 2rem;
     --_spacing-responsiveness---section--spacing-xlarge: 24px;
     --_colors---color--color-background-secondary: whitesmoke;
@@ -108,7 +108,7 @@ body {
     line-height: var(--line-hight--line-height-3xloose);
     font-weight: var(--font-weight--font-weight-normal);
     --_spacing-responsiveness---max--container-max-width: 1440px;
-    --_spacing-responsiveness---container--container-spacing-vertical: 5rem;
+    --_spacing-responsiveness---container--container-spacing-vertical: 3rem;
     --_spacing-responsiveness---container--container-spacing-horizontal: 2rem;
     --_spacing-responsiveness---section--spacing-xlarge: 24px;
     --_spacing-responsiveness---max--max-percent: 100%;
