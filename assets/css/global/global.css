@@ -2620,7 +2620,7 @@ body>div>section:last-of-type,
 
 .cta-offer-highlight {
     display: inline-block !important;
-    background-color: #FF5812 !important;
+    background-color: red !important;
     width: 8px !important;
     min-width: 8px !important;
     height: 8px !important;
@@ -2714,7 +2714,7 @@ body>div>section:last-of-type,
 }
 
 .home-1-service-card:hover .home-1-service-text {
-    color: #FF5812 !important;
+    color: red !important;
 }
 
 /* Numbers & Labels: (01), (02), SERVICE */
@@ -3026,7 +3026,7 @@ body>div>section:last-of-type,
     width: 6px !important;
     height: 6px !important;
     min-width: 6px !important;
-    background-color: #ff5812 !important;
+    background-color: red !important;
     border-radius: 1px !important;
 }
 
@@ -3314,7 +3314,7 @@ body>div>section:last-of-type,
         width: 6px !important;
         height: 6px !important;
         min-width: 6px !important;
-        background-color: #ff5812 !important;
+        background-color: red !important;
         border-radius: 1px !important;
     }
 

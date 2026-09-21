@@ -3508,7 +3508,8 @@ figure {
 }
 
 .hero-social-media-link:hover {
-    background-color: var(--_colors---color--color-primary);
+    /* background-color: var(--_colors---color--color-primary); */
+    background-color: #202775;
     color: var(--_colors---color--color-white)
 }
 
@@ -3610,7 +3611,8 @@ figure {
 }
 
 .brand-circle {
-    background-color: var(--_colors---color--color-primary);
+    /* background-color: var(--_colors---color--color-primary); */
+    background-color: #202775;
     width: 8px;
     min-width: 8px;
     height: 8px;

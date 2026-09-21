@@ -1585,7 +1585,7 @@ figure {
 }
 
 .cta-offer-highlight {
-    background-color: var(--_colors---color--color-primary);
+    background-color: red;
     width: 10px;
     min-width: 10px;
     height: 10px;
@@ -1712,7 +1712,8 @@ figure {
 }
 
 .brand-circle {
-    background-color: var(--_colors---color--color-primary);
+    /* background-color: var(--_colors---color--color-primary); */
+    background-color: #202775;
     width: 8px;
     min-width: 8px;
     height: 8px;
