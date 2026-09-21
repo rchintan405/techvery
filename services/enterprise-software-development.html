@@ -82,7 +82,12 @@
       border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
     }
 
-    .home-1-service-card.active { flex: 1 1 45% !important; background-color: #1E1E24 !important; border-color: rgba(255, 255, 255, 0.25) !important; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35) !important; }
+    .home-1-service-card.active {
+      flex: 1 1 45% !important;
+      background-color: #1E1E24 !important;
+      border-color: rgba(255, 255, 255, 0.25) !important;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35) !important;
+    }
 
     /* Subtle hover effect indicating clickable state without expanding */
     .home-1-service-card:not(.active):hover {
@@ -134,11 +139,34 @@
       writing-mode: vertical-lr !important;
       transform: rotate(180deg) !important;
       white-space: nowrap !important;
-      font-size: 1.15rem !important;
+      font-size: 28px !important;
       font-weight: 600 !important;
-      color: #111111 !important;
+      color: #ffffff !important;
       margin: 0 !important;
-      letter-spacing: -0.3px !important;
+      letter-spacing: -0.5px !important;
+      line-height: 1.2 !important;
+    }
+
+    @media (min-width: 992px) and (max-width: 1200px) {
+      .home-1-service-text {
+        font-size: 24px !important;
+        letter-spacing: -0.3px !important;
+      }
+    }
+
+    @media (max-width: 991px) {
+      .home-1-service-text {
+        writing-mode: horizontal-tb !important;
+        transform: none !important;
+        white-space: normal !important;
+        font-size: 24px !important;
+      }
+    }
+
+    @media (max-width: 479px) {
+      .home-1-service-text {
+        font-size: 20px !important;
+      }
     }
 
     .home-1-service-image-wrapper {
@@ -211,18 +239,20 @@
     @media (max-width: 991px) {
       .home-1-service-holder {
         flex-direction: column !important;
+        gap: 16px !important;
       }
 
       .home-1-service-card {
         flex: 1 1 auto !important;
         min-height: auto !important;
         max-height: none !important;
-        border-right: 1px solid rgba(255, 255, 255, 0.08) !important;
-        border-bottom: none !important;
+        border: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-radius: 16px !important;
       }
 
       .home-1-service-card:last-child {
-        border-bottom: 1px solid var(--_colors---color--color-border-primary, #e3e3e3) !important;
+        border-right: 1px solid rgba(255, 255, 255, 0.1) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
       }
 
       .home-1-service-card .home-1-service-content-wrapper {
@@ -606,8 +636,15 @@
       <section class="section">
         <div class="w-layout-blockcontainer container w-container">
           <div class="section-wrapper home-1-service">
-            <div class="section-header-wrapper">
+                        <div class="section-header-wrapper">
               <h2 class="section-heading">Related Service</h2>
+              <div class="section-header-divider-wrapper">
+                <div class="section-header-divider"></div>
+              </div>
+              <div class="home-1-service-header-tag-wrapper">
+                <div class="brand-circle"></div>
+                <div class="section-tag">SERVICE</div>
+              </div>
             </div>
             <div class="home-1-service-wrapper">
               <div class="home-1-service-holder">
@@ -642,7 +679,8 @@
                             <div class="anim-code-line">});</div>
                           </div>
                           <div class="anim-floating-node node-react">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#38bdf8"
+                              stroke-width="2">
                               <circle cx="12" cy="12" r="3" />
                               <ellipse cx="12" cy="12" rx="10" ry="4" />
                               <ellipse cx="12" cy="12" rx="10" ry="4" transform="rotate(60 12 12)" />
@@ -651,7 +689,8 @@
                             <span>React</span>
                           </div>
                           <div class="anim-floating-node node-db">
-                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#38bdf8"
+                              stroke-width="2">
                               <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />
                             </svg>
                             <span>Cloud DB</span>
@@ -662,8 +701,7 @@
                     <div class="home-1-service-content-holder _01">
                       <div class="home-1-service-header-wrapper">
                         <h3>Enterprise Software Development</h3>
-                        <div class="text-small paragraph">We create secure, scalable applications for complex
-                          operations
+                        <div class="text-small paragraph">We create secure, scalable applications for complex operations
                           and workflows.</div>
                       </div>
                       <div>
@@ -851,19 +889,22 @@
                           </div>
                           <div class="anim-ai-nodes-row">
                             <div class="anim-ai-node-item">
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" stroke-width="2">
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#38bdf8"
+                                stroke-width="2">
                                 <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
                               </svg>
                               <span>GPT-4o</span>
                             </div>
                             <div class="anim-ai-node-item">
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c084fc" stroke-width="2">
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c084fc"
+                                stroke-width="2">
                                 <path d="M12 2a10 10 0 1 0 10 10A10 10 0 0 0 12 2zm0 14a4 4 0 1 1 4-4 4 4 0 0 1-4 4z" />
                               </svg>
                               <span>Claude 3.5</span>
                             </div>
                             <div class="anim-ai-node-item">
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2">
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ade80"
+                                stroke-width="2">
                                 <rect x="3" y="11" width="18" height="10" rx="2" />
                                 <circle cx="12" cy="5" r="2" />
                                 <path d="M12 7v4" />
@@ -908,7 +949,6 @@
                           <p>Workflow Automation</p>
                         </div>
                       </div>
-
 
                       <div class="home-1-service-tag-wrapper">
                         <div class="home-1-service-tag">
@@ -960,7 +1000,8 @@
                           </div>
                           <div class="anim-web3-row">
                             <div class="anim-block-node">
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#818cf8" stroke-width="2">
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#818cf8"
+                                stroke-width="2">
                                 <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
                                 <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
                               </svg>
@@ -970,7 +1011,8 @@
                               </div>
                             </div>
                             <div class="anim-block-node">
-                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fbbf24" stroke-width="2">
+                              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#fbbf24"
+                                stroke-width="2">
                                 <path d="M6 3h12l4 6-10 12L2 9z" />
                               </svg>
                               <div style="display:flex; flex-direction:column;">
@@ -1066,8 +1108,8 @@
                             <span class="anim-pipe-chip">BUILD</span>
                             <span class="anim-pipe-chip">AUDIT</span>
                             <span class="anim-pipe-chip active">DEPLOY
-                              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2"
-                                style="display:inline; vertical-align:-1px; margin-left:2px;">
+                              <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="#ffffff"
+                                stroke-width="2" style="display:inline; vertical-align:-1px; margin-left:2px;">
                                 <path
                                   d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
                                 <path
@@ -1157,8 +1199,8 @@
                         <div class="anim-cyber-hub">
                           <div class="anim-cyber-left">
                             <div class="anim-radar-line"></div>
-                            <svg class="anim-shield-svg" viewBox="0 0 24 24" fill="none" stroke="#22c55e" stroke-width="1.8"
-                              style="width:60px; height:65px;">
+                            <svg class="anim-shield-svg" viewBox="0 0 24 24" fill="none" stroke="#22c55e"
+                              stroke-width="1.8" style="width:60px; height:65px;">
                               <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" fill="rgba(34, 197, 94, 0.25)" />
                               <path d="M9 12l2 2 4-4" stroke="#4ade80" stroke-width="2.5" stroke-linecap="round" />
                             </svg>
@@ -1177,7 +1219,8 @@
                     <div class="home-1-service-content-holder _06">
                       <div class="home-1-service-header-wrapper">
                         <h3>Cybersecurity &amp; Compliance</h3>
-                        <div class="text-small paragraph">Protect enterprise systems with security-first architecture and
+                        <div class="text-small paragraph">Protect enterprise systems with security-first architecture
+                          and
                           compliance solutions for regulated industries.</div>
                       </div>
 
@@ -1257,7 +1300,8 @@
                             <div class="anim-bar-col-v3"></div>
                             <div class="anim-bar-col-v3"></div>
                             <div class="anim-bar-col-v3"></div>
-                            <div style="display:flex; flex-direction:column; justify-content:center; align-items:flex-end;">
+                            <div
+                              style="display:flex; flex-direction:column; justify-content:center; align-items:flex-end;">
                               <span style="font-size:15px; font-weight:800; color:#ffffff;">99.9%</span>
                               <span style="font-size:9px; color:#cbd5e1;">ETL Accuracy</span>
                             </div>
@@ -1285,7 +1329,7 @@
 
                         <div class="service-points">
                           <div class="points"></div>
-                          <p>Business Intelligence</p>
+                          <p>Dashboard Development</p>
                         </div>
 
                         <div class="service-points">
@@ -1773,7 +1817,8 @@
                   <a href="../privacy-policy.html" class="footer-copyright-link">Privacy Policy</a>
                   <a href="../terms-condition.html" class="footer-copyright-link">Terms &amp; Condition</a>
                 </div>
-                <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="back-to-top-wrapper w-inline-block">
+                <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;"
+                  class="back-to-top-wrapper w-inline-block">
                   <div class="back-to-top-icon w-embed"><svg xmlns="http://www.w3.org/2000/svg" width="100%"
                       height="100%" viewBox="0 0 24 24" fill="none" preserveAspectRatio="xMidYMid meet"
                       aria-hidden="true" role="img">
