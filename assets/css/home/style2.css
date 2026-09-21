@@ -3547,7 +3547,8 @@ figure {
     grid-column-gap: var(--_spacing-responsiveness---section--spacing-base-small);
     grid-row-gap: var(--_spacing-responsiveness---section--spacing-base-small);
     border-radius: var(--_spacing-responsiveness---radious--radius-xsmall);
-    background-color: var(--_colors---color--color-primary);
+    /* background-color: var(--_colors---color--color-primary); */
+    background-color: #202775 !important;
     color: var(--_colors---color--color-white);
     font-size: var(--body-text--text-small);
     line-height: var(--line-hight--line-height-xloose);
