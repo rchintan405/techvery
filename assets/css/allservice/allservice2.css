@@ -5811,9 +5811,9 @@ figure {
         grid-row-gap: var(--_spacing-responsiveness---section--spacing-base)
     }
 
-    .service-solution-link-wrapper {
+    /* .service-solution-link-wrapper {
         flex-flow: column
-    }
+    } */
 
     .service-solution-image-wrapper {
         max-width: none;

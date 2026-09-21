@@ -3105,6 +3105,11 @@ body>div>section:last-of-type,
 
 /* Tablet & Mobile Screens (<= 768px) */
 @media screen and (max-width: 768px) {
+
+    .contact-image-wrapper {
+        min-height: auto;
+    }
+
     .section-wrapper.home-1-service {
         opacity: 1 !important;
         transform: none !important;
