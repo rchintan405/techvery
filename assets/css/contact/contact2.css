@@ -61,7 +61,7 @@
     --_colors---color--color-primary: #ff5911;
     --_colors---color--color-background-tertiary: #9e9e9e;
     --_colors---color--color-background-dark: #414141;
-    --_spacing-responsiveness---section--spacing-2xl: 15px;
+    --_spacing-responsiveness---section--spacing-2xl: 32px;
     --_spacing-responsiveness---section--spacing-3xl: 40px;
     --_spacing-responsiveness---section--spacing-3xlarge: 30px;
     --_spacing-responsiveness---section--spacing-small: 8px;
@@ -123,7 +123,7 @@ body {
     --_spacing-responsiveness---section--spacing-2xlarge: 28px;
     --_spacing-responsiveness---radious--radius-xsmall: 4px;
     --_spacing-responsiveness---radious--r-round\<deleted\|variable-b9a27c4f-ad86-d33f-2deb-5045ba8e1685\>: 100%;
-    --_spacing-responsiveness---section--spacing-2xl: 15px;
+    --_spacing-responsiveness---section--spacing-2xl: 32px;
     --_spacing-responsiveness---section--spacing-3xl: 40px;
     --_spacing-responsiveness---section--spacing-3xlarge: 30px;
     --_spacing-responsiveness---section--spacing-small: 8px;
@@ -4633,7 +4633,7 @@ figure {
         --_spacing-responsiveness---section--spacing-2xlarge: 28px;
         --_spacing-responsiveness---radious--radius-xsmall: 4px;
         --_spacing-responsiveness---radious--r-round\<deleted\|variable-b9a27c4f-ad86-d33f-2deb-5045ba8e1685\>: 100%;
-        --_spacing-responsiveness---section--spacing-2xl: 15px;
+        --_spacing-responsiveness---section--spacing-2xl: 32px;
         --_spacing-responsiveness---section--spacing-3xl: 40px;
         --_spacing-responsiveness---section--spacing-3xlarge: 30px;
         --_spacing-responsiveness---section--spacing-small: 8px;
