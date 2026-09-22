@@ -2104,7 +2104,7 @@ body.mobile-nav-locked {
 }
 
 
-.service-a-title {
+.service-title {
     font-size: 32px;
 }
 
@@ -2701,7 +2701,7 @@ body>div>section:last-of-type,
 /* Headings & Main Text for Our Expertise section */
 .home-1-service-card h3,
 .home-1-service-card .home-1-service-header-wrapper h3,
-.home-1-service-card .service-a-title {
+.home-1-service-card .service-title {
     color: #FFFFFF !important;
     font-weight: 600 !important;
 }
@@ -2766,6 +2766,74 @@ body>div>section:last-of-type,
     font-weight: 500 !important;
 }
 
+/* ==========================================================================
+   Service 1 / Service A Page Left Column Image Height & Alignment
+   ========================================================================== */
+.service-1-card-grid {
+    align-items: stretch !important;
+}
+
+.service-1-content-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    height: 100% !important;
+    gap: 20px !important;
+}
+
+.service-1-content-holder {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 16px !important;
+    flex-shrink: 0 !important;
+}
+
+.service-1-image-wrapper {
+    width: 100% !important;
+    height: 100% !important;
+    flex: 1 1 auto !important;
+    min-height: 180px !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    display: flex !important;
+}
+
+.service-1-image {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+}
+
+.service-1-holder {
+    display: flex !important;
+    flex-direction: column !important;
+    height: 100% !important;
+    justify-content: space-between !important;
+    gap: 14px !important;
+}
+
+/* ==========================================================================
+   FAQ Accordion Icon Color Override (#202775)
+   ========================================================================== */
+.faq-plus-icon-wrapper {
+    color: #202775 !important;
+}
+
+.faq-menu svg,
+.faq-menu svg *,
+.faq-menu path,
+.faq-menu rect,
+.faq-menu line,
+.faq-menu polygon,
+.faq-menu circle,
+.faq-menu g,
+.accordion-plus-icon-component svg,
+.accordion-plus-icon-component svg * {
+    fill: #202775 !important;
+    stroke: #202775 !important;
+}
+
 /* --- Hero Bottom Service Cards (.hero-service-link-wrapper) Black Text & Black Hover --- */
 .hero-service-link-wrapper .hero-service-main-category,
 .hero-service-link-wrapper .hero-service-main-category div,
@@ -2818,51 +2886,8 @@ body>div>section:last-of-type,
 
 .policy-hero-header-wrapper,
 .condition-hero-header-wrapper {
-    margin-bottom: 2rem !important;
+    margin-bottom: 0 !important;
     text-align: left !important;
-}
-
-.condition-hero-h1 {
-    font-size: 2.75rem !important;
-    font-weight: 800 !important;
-    color: #111111 !important;
-    margin-bottom: 0.5rem !important;
-    line-height: 1.2 !important;
-}
-
-.hero-sub-text {
-    font-size: 1.1rem !important;
-    color: #555555 !important;
-}
-
-.privacy-policy-wrapper,
-.terms-wrapper {
-    color: #222222 !important;
-    font-size: 1rem !important;
-    line-height: 1.7 !important;
-}
-
-.privacy-policy-wrapper h2,
-.terms-wrapper h2 {
-    color: #111111 !important;
-    font-size: 1.5rem !important;
-    font-weight: 700 !important;
-    margin-top: 2rem !important;
-    margin-bottom: 0.75rem !important;
-}
-
-.privacy-policy-wrapper p,
-.terms-wrapper p {
-    color: #333333 !important;
-    margin-bottom: 1rem !important;
-}
-
-.privacy-contact-box {
-    background: #f8f9fa !important;
-    border: 1px solid #e9ecef !important;
-    border-radius: 12px !important;
-    padding: 1.5rem !important;
-    margin-top: 1rem !important;
 }
 
 /* ==========================================================================
@@ -3671,6 +3696,8 @@ body>div>section:last-of-type,
     .service-1-content-wrapper {
         display: flex !important;
         flex-direction: column !important;
+        height: auto !important;
+        justify-content: flex-start !important;
         gap: 16px !important;
         width: 100% !important;
     }
@@ -3697,17 +3724,24 @@ body>div>section:last-of-type,
 
     .service-1-image-wrapper {
         width: 100% !important;
-        height: auto !important;
-        max-height: 240px !important;
+        height: 240px !important;
+        min-height: 200px !important;
+        max-height: 280px !important;
+        flex: none !important;
         border-radius: 12px !important;
         overflow: hidden !important;
     }
 
     .service-1-image {
         width: 100% !important;
-        height: auto !important;
-        max-height: 240px !important;
+        height: 100% !important;
+        max-height: 280px !important;
         object-fit: cover !important;
+    }
+
+    .service-1-holder {
+        height: auto !important;
+        gap: 12px !important;
     }
 }
 
@@ -4067,6 +4101,7 @@ body>div>section:last-of-type,
         width: 100% !important;
         max-width: 100% !important;
         box-sizing: border-box !important;
+        gap: 20px;
     }
 
     .contact-info-top-card {

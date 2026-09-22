@@ -3441,7 +3441,7 @@ figure {
     }
 
     .pricing-2-plan,
-    .service-a-title {
+    .service-title {
         font-size: var(--body-text--text-display-small)
     }
 
@@ -6319,7 +6319,7 @@ figure {
     }
 
     .pricing-2-plan,
-    .service-a-title {
+    .service-title {
         font-size: var(--body-text--text-medium-large)
     }
 

@@ -355,6 +355,7 @@
 }
 
 @media (max-width: 1024px) {
+
     .combined-track-record,
     .awards {
         grid-template-columns: 1fr;
@@ -1431,7 +1432,7 @@
 }
 
 
-.service-a-title {
+.service-title {
     font-size: 32px;
 }
 

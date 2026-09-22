@@ -1791,7 +1791,7 @@ figure {
     letter-spacing: var(--letter-spacing--letter-spacing-medium)
 }
 
-.service-a-title {
+.service-title {
     color: var(--_colors---color--color-black);
     font-size: var(--body-text--text-display-small);
     line-height: var(--line-hight--line-height-normal);
@@ -1799,7 +1799,7 @@ figure {
     letter-spacing: var(--letter-spacing--letter-spacing-display-small)
 }
 
-.service-a-hero-tag {
+.service-hero-tag {
     grid-column-gap: var(--_spacing-responsiveness---section--spacing-small);
     grid-row-gap: var(--_spacing-responsiveness---section--spacing-small);
     justify-content: center;
@@ -3650,7 +3650,7 @@ figure {
     }
 
     .pricing-2-plan,
-    .service-a-title {
+    .service-title {
         font-size: var(--body-text--text-display-small)
     }
 
@@ -6528,7 +6528,7 @@ figure {
     }
 
     .pricing-2-plan,
-    .service-a-title {
+    .service-title {
         font-size: var(--body-text--text-medium-large)
     }
 

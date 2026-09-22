@@ -1454,7 +1454,8 @@ figure {
 
 .contact-button {
     border-radius: var(--_spacing-responsiveness---radious--radius-xsmall);
-    background-color: var(--_colors---color--color-button-bg);
+    /* background-color: var(--_colors---color--color-button-bg); */
+    background-color: #202775 !important;
     min-height: 52px;
     color: var(--_colors---color--color-white);
     font-size: var(--body-text--text-base-small);
@@ -3335,7 +3336,7 @@ figure {
     }
 
     .pricing-2-plan,
-    .service-a-title {
+    .service-title {
         font-size: var(--body-text--text-display-small)
     }
 
@@ -6213,7 +6214,7 @@ figure {
     }
 
     .pricing-2-plan,
-    .service-a-title {
+    .service-title {
         font-size: var(--body-text--text-medium-large)
     }
 

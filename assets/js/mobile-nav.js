@@ -85,7 +85,7 @@
               '</a>' +
             '</li>' +
             '<li class="mobile-nav-item">' +
-              '<a href="' + rootPrefix + 'service/service-a.html" class="mobile-nav-link ' + (isServices ? 'active' : '') + '">' +
+              '<a href="' + rootPrefix + 'service/service.html" class="mobile-nav-link ' + (isServices ? 'active' : '') + '">' +
                 '<span>Services</span>' +
                 '<svg class="mobile-nav-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>' +
               '</a>' +
