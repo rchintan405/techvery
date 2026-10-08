@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Logo Image Hover Swap</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: #fff;
+
+            font-family: Arial, sans-serif;
+        }
+
+
+        /* ========================================
+           SECTION
+        ======================================== */
+
+        .result-section {
+            display: flex;
+
+            gap: 75px;
+
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        /* ========================================
+           COMMON CARD
+        ======================================== */
+
+        .image-card {
+            width: 360px;
+            height: 360px;
+
+            position: relative;
+
+            overflow: hidden;
+
+            background: #fff;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            cursor: pointer;
+        }
+
+
+        /* ========================================
+           LEFT CARD
+        ======================================== */
+
+        .logo-card {
+            position: relative;
+        }
+
+
+        /*
+        LEFT LOGO VERSION
+
+        This is visible initially.
+
+        It uses about_2.png but cuts it using
+        your exact logo shape.
+        */
+
+        .left-logo-image {
+
+            position: absolute;
+
+            width: 100%;
+            height: 100%;
+
+            inset: 0;
+
+            object-fit: cover;
+
+            opacity: 1;
+
+            transform: scale(1);
+
+            /*
+            YOUR LOGO MASK
+            */
+
+            -webkit-mask-image: url("/assets/images/logo-mask.png");
+            mask-image: url("/assets/images/logo-mask.png");
+
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+
+            -webkit-mask-position: center;
+            mask-position: center;
+
+            -webkit-mask-size: 290px 290px;
+            mask-size: 290px 290px;
+
+            transition:
+                opacity 0.9s ease,
+                transform 1s cubic-bezier(.22, 1, .36, 1),
+                filter 0.8s ease;
+        }
+
+
+        /*
+        LEFT FULL IMAGE
+
+        Hidden initially.
+
+        Appears when RIGHT card is hovered.
+        */
+
+        .left-full-image {
+
+            position: absolute;
+
+            width: 100%;
+            height: 100%;
+
+            inset: 0;
+
+            object-fit: cover;
+
+            opacity: 0;
+
+            transform: scale(1.12);
+
+            filter: blur(4px);
+
+            transition:
+                opacity 0.9s ease,
+                transform 1s cubic-bezier(.22, 1, .36, 1),
+                filter 0.8s ease;
+        }
+
+
+        /* ========================================
+           RIGHT CARD
+        ======================================== */
+
+        /*
+        RIGHT NORMAL IMAGE
+
+        Visible initially.
+        */
+
+        .right-full-image {
+
+            position: absolute;
+
+            width: 100%;
+            height: 100%;
+
+            inset: 0;
+
+            object-fit: cover;
+
+            opacity: 1;
+
+            transform: scale(1);
+
+            filter: blur(0);
+
+            transition:
+                opacity 0.9s ease,
+                transform 1s cubic-bezier(.22, 1, .36, 1),
+                filter 0.8s ease;
+        }
+
+
+        /*
+        RIGHT LOGO VERSION
+
+        Hidden initially.
+
+        Appears when RIGHT card is hovered.
+        */
+
+        .right-logo-image {
+
+            position: absolute;
+
+            width: 100%;
+            height: 100%;
+
+            inset: 0;
+
+            object-fit: cover;
+
+            opacity: 0;
+
+            transform:
+                scale(0.65) rotate(-4deg);
+
+            filter: blur(4px);
+
+            /*
+            EXACT LOGO MASK
+            */
+
+            -webkit-mask-image: url("/assets/images/logo-mask.png");
+            mask-image: url("/assets/images/logo-mask.png");
+
+            -webkit-mask-repeat: no-repeat;
+            mask-repeat: no-repeat;
+
+            -webkit-mask-position: center;
+            mask-position: center;
+
+            -webkit-mask-size: 290px 290px;
+            mask-size: 290px 290px;
+
+            transition:
+                opacity 0.9s ease,
+                transform 1s cubic-bezier(.22, 1, .36, 1),
+                filter 0.8s ease;
+        }
+
+
+        /* ========================================
+           HOVER RIGHT CARD
+        ======================================== */
+
+        /*
+        ------------------------------------------
+        LEFT CARD
+        ------------------------------------------
+
+        Logo → Full image
+        */
+
+        .result-section:has(.bitcoin-card:hover) .left-logo-image {
+
+            opacity: 0;
+
+            transform:
+                scale(0.75) rotate(6deg);
+
+            filter: blur(4px);
+        }
+
+
+        .result-section:has(.bitcoin-card:hover) .left-full-image {
+
+            opacity: 1;
+
+            transform: scale(1);
+
+            filter: blur(0);
+        }
+
+
+        /*
+        ------------------------------------------
+        RIGHT CARD
+        ------------------------------------------
+
+        Full image → Logo
+        */
+
+        .result-section:has(.bitcoin-card:hover) .right-full-image {
+
+            opacity: 0;
+
+            transform: scale(1.12);
+
+            filter: blur(4px);
+        }
+
+
+        .result-section:has(.bitcoin-card:hover) .right-logo-image {
+
+            opacity: 1;
+
+            transform:
+                scale(1) rotate(0deg);
+
+            filter: blur(0);
+        }
+
+
+        /* ========================================
+           SHINE EFFECT
+        ======================================== */
+
+        .image-card::after {
+
+            content: "";
+
+            position: absolute;
+
+            inset: 0;
+
+            background:
+                linear-gradient(110deg,
+                    transparent 35%,
+                    rgba(255, 255, 255, 0.35) 50%,
+                    transparent 65%);
+
+            transform: translateX(-130%);
+
+            transition:
+                transform 1.2s ease;
+
+            pointer-events: none;
+
+            z-index: 20;
+        }
+
+
+        /*
+        Shine only when hovering RIGHT
+        */
+
+        .bitcoin-card:hover::after {
+
+            transform: translateX(130%);
+        }
+
+
+        /* ========================================
+           RESPONSIVE
+        ======================================== */
+
+        @media (max-width: 850px) {
+
+            .result-section {
+
+                flex-direction: column;
+
+                gap: 30px;
+            }
+
+            .image-card {
+
+                width: 320px;
+                height: 320px;
+            }
+
+            .left-logo-image,
+            .right-logo-image {
+
+                -webkit-mask-size: 260px 260px;
+                mask-size: 260px 260px;
+            }
+        }
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <section class="result-section">
+
+
+        <!-- =====================================
+             LEFT CARD
+        ====================================== -->
+
+        <div class="image-card logo-card">
+
+
+            <!--
+            INITIAL STATE
+
+            about_2.png
+            ↓
+            Exact logo mask
+
+            This gives you the logo-shaped
+            Bitcoin image on page load.
+            -->
+
+            <img src="/assets/images/about_1.png" class="left-logo-image" alt="Bitcoin Logo" />
+
+
+            <!--
+            HOVER STATE
+
+            Full about_2.png
+
+            This appears when the RIGHT card
+            is hovered.
+            -->
+
+            <img src="/assets/images/about_1.png" class="left-full-image" alt="Bitcoin" />
+
+        </div>
+
+
+
+        <!-- =====================================
+             RIGHT CARD
+        ====================================== -->
+
+        <div class="image-card bitcoin-card">
+
+
+            <!--
+            INITIAL STATE
+
+            Normal full Bitcoin image.
+            -->
+
+            <img src="/assets/images/about_2.png" class="right-full-image" alt="Bitcoin" />
+
+
+            <!--
+            HOVER STATE
+
+            Same about_2.png
+            ↓
+            Exact logo mask
+            -->
+
+            <img src="/assets/images/about_2.png" class="right-logo-image" alt="Bitcoin Logo" />
+
+        </div>
+
+
+    </section>
+
+
+</body>
+
+</html>

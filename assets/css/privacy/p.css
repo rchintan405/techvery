@@ -385,8 +385,8 @@ figure {
 
 .home-navbar-wrapper {
     z-index: 99999;
-    padding-right: var(--_spacing-responsiveness---container--container-spacing-horizontal);
-    padding-left: var(--_spacing-responsiveness---container--container-spacing-horizontal);
+    /* padding-right: var(--_spacing-responsiveness---container--container-spacing-horizontal); */
+    /* padding-left: var(--_spacing-responsiveness---container--container-spacing-horizontal); */
     border-bottom: .25px solid var(--_colors---color--color-border-primary);
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
@@ -1247,7 +1247,7 @@ figure {
 }
 
 .cta-offer-highlight {
-    background-color: var(--_colors---color--color-primary);
+    background-color: #D40000;
     width: 10px;
     min-width: 10px;
     height: 10px;
